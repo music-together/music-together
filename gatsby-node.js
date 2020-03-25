@@ -9,10 +9,10 @@ exports.onCreatePage = async ({ page, actions: { createPage } }) => {
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   try {
-    const sceneTemplate = path.resolve("./src/templates/scene.js")
+    const sceneTemplate = path.resolve("./src/templates/artist.js")
     const { data, errors } = await graphql(`
       {
-        airtable: allAirtable(filter: { table: { eq: "Scenes" } }) {
+        airtable: allAirtable(filter: { table: { eq: "Artists" } }) {
           edges {
             node {
               id

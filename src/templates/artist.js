@@ -15,17 +15,15 @@ export default ({
   <Layout>
     <SEO title={Name} />
     <Header />
-    <Scene
-      title={Name}
-      description={Location}
-      image={Attachments[0].thumbnails.large.url}
-    />
+    <pre><code>
+      {JSON.stringify(object, null, 2)}
+    </code></pre>
   </Layout>
 )
 
 export const sceneQuery = graphql`
   query($id: String!) {
-    airtable(table: { eq: "Scenes" }, id: { eq: $id }) {
+    airtable(table: { eq: "Artists" }, id: { eq: $id }) {
       data {
         Name
         Location

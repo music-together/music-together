@@ -32,7 +32,7 @@ module.exports = {
         tables: [
           {
             baseId: process.env.SCENES_BASE_ID,
-            tableName: "Scenes",
+            tableName: "Artists",
           },
         ],
       },

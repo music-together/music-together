@@ -13,15 +13,7 @@ export default () => {
           node {
             id
             data {
-              Name
-              Location
-              Attachments {
-                thumbnails {
-                  large {
-                    url
-                  }
-                }
-              }
+              Genre
             }
           }
         }

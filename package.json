@@ -37,7 +37,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "start": "gatsby develop",
+    "s": "gatsby develop",
     "reset": "rm -rf .cache/ public/",
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve",
