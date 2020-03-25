@@ -6,17 +6,17 @@ import Header from "components/theme/Header"
 import Scene from "staticContainers/Scene"
 
 export default ({
-  data: {
-    airtable: {
-      data: { Name, Location, Attachments },
-    },
-  },
+  data//: {
+    // airtable: {
+    //   data: { Genre },
+    // },
+  // },
 }) => (
   <Layout>
-    <SEO title={Name} />
+    <SEO title={'test'} />
     <Header />
     <pre><code>
-      {JSON.stringify(object, null, 2)}
+      {JSON.stringify(data, null, 2)}
     </code></pre>
   </Layout>
 )
@@ -25,15 +25,7 @@ export const sceneQuery = graphql`
   query($id: String!) {
     airtable(table: { eq: "Artists" }, id: { eq: $id }) {
       data {
-        Name
-        Location
-        Attachments {
-          thumbnails {
-            large {
-              url
-            }
-          }
-        }
+        Genre
       }
     }
   }

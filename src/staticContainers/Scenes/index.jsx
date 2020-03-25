@@ -8,7 +8,7 @@ import { Wrapper, Flex, CardScene } from "./styles"
 export default () => {
   const { airtable } = useStaticQuery(graphql`
     query {
-      airtable: allAirtable(filter: { table: { eq: "Scenes" } }) {
+      airtable: allAirtable(filter: { table: { eq: "Artists" } }) {
         edges {
           node {
             id
@@ -30,18 +30,12 @@ export default () => {
           ({
             node: {
               id,
-              data: { Name, Location, Attachments },
+              data
             },
           }) => (
-            <CardScene key={id}>
-              <Link to={id}>
-                <Card
-                  title={Name}
-                  description={Location}
-                  image={Attachments[0].thumbnails.large.url}
-                />
-              </Link>
-            </CardScene>
+            <pre><code>
+              {JSON.stringify(data, null, 2)}
+            </code></pre>
           )
         )}
       </Flex>
