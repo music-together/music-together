@@ -7,7 +7,7 @@ export default () => {
   const { schedule } = useStaticQuery(graphql`
     query {
       schedule: allAirtable(
-        filter: { table: { eq: "Schedule (test - Marlow)" } }
+        filter: { table: { eq: "Schedule" } }
       ) {
         edges {
           node {
