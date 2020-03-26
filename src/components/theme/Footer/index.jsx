@@ -91,16 +91,16 @@ export function Footer() {
               <Link to="/apply">Apply to perform</Link>
             </li>
             <li>
-              <Link>Sponsors</Link>
+              <Link to="#">Sponsors</Link>
             </li>
             <li>
-              <Link>Artist resources</Link>
+              <Link to="#">Artist resources</Link>
             </li>
             <li>
-              <Link>Artist listing</Link>
+              <Link to="#">Artist listing</Link>
             </li>
             <li>
-              <Link>Shop</Link>
+              <Link to="#">Shop</Link>
             </li>
           </ul>
         </Section>
@@ -110,13 +110,13 @@ export function Footer() {
         <Section>
           <ul>
             <li>
-              <Link>Instagram</Link>
+              <Link to="#">Instagram</Link>
             </li>
             <li>
-              <Link>Facebook</Link>
+              <Link to="#">Facebook</Link>
             </li>
             <li>
-              <Link>Twitter</Link>
+              <Link to="#">Twitter</Link>
             </li>
           </ul>
         </Section>
