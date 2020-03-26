@@ -14,7 +14,7 @@ export default () => (
       &lt;TBD: Instructions&gt;
     </div>
 
-    <a href="https://airtable.com/shraDwLHxfGjP0fXl" target="_blank">
+    <a href="https://airtable.com/shraDwLHxfGjP0fXl" target="_blank" rel="noopener noreferrer">
       <Button>
         Apply now
       </Button>
@@ -27,7 +27,7 @@ export default () => (
       &lt;TBD: Instructions&gt;
     </div>
 
-    <a href="https://airtable.com/shrQwXjoDurugYKKp" target="_blank">
+    <a href="https://airtable.com/shrQwXjoDurugYKKp" target="_blank" rel="noopener noreferrer">
       <Button>
         Request a change
       </Button>
