@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
-import Header from "components/theme/Header"
+import { Header } from "components/theme/Header"
 
 export default ({ data }) => {
   const artist = data.artist.data;
