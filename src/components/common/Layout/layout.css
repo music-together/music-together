@@ -85,3 +85,37 @@ html {
   color: white;
   background: black;
 }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: var(--spacing--xtight);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--text-color--subdued);
+}
+
+:root {
+  --text-color: rgb(255, 255, 255);
+  --text-color--subdued: rgba(255, 255, 255, 0.5);
+
+  --font-size--default: 16px;
+  --font-size--medium: 20px;
+  --font-size--large: 36px;
+
+  --spacing--xtight: 10px;
+  --spacing--tight: 20px;
+  --spacing--base: 40px;
+  --spacing--loose: 80px;
+  --spacing--xloose: 160px;
+}
