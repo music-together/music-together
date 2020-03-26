@@ -21,8 +21,6 @@ const guessMediaType = link => {
 export const SocialLink = ({link, type = guessMediaType(link)}) => {
   if (!link) return null;
 
-  console.log('type:', type)
-
   return (
     <SocialIcon link={link} type={type} />
   )
@@ -40,8 +38,6 @@ const UntyledSocialIcon = ({type}) => {
       return <FaFacebook {...iconProps}  />
     case 'instagram':
       return <FaInstagram {...iconProps} />
-    case 'twitter':
-      return <FaTwitter {...iconProps} />
     case 'youtube':
       return <FaYoutube {...iconProps} />
     case 'apple':
