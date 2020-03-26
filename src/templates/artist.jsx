@@ -67,7 +67,7 @@ const SocialLinkItem = ({link, name}) => {
   if (!link || !name) return null;
 
   return (
-    <li><a href={link} target="_blank">{name}</a></li>
+    <li><a href={link} target="_blank" rel="noopener noreferrer">{name}</a></li>
   )
 }
 
