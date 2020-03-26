@@ -36,7 +36,7 @@ module.exports = {
           },
           {
             baseId: process.env.SCENES_BASE_ID,
-            tableName: "Schedule (test - Marlow)",
+            tableName: "Schedule",
           },
         ],
       },
