@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Button } from "components"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
-import { Header } from "components/theme/Header"
 
 export default ({ data }) => {
   const artist = data.artist.data;
@@ -13,7 +13,6 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={artist.Name} description={artist.Bio} />
-      <Header />
 
       {/* TODO: All Artists link */}
       <h1>{artist.Name}</h1>
@@ -32,7 +31,7 @@ export default ({ data }) => {
             <a href={node.data.Stream_Link}>{node.data.Stream_Name}</a>
           </div>
           <div>
-            <button>TODO: Add to Calendar</button>
+            <Button>TODO: Add to Calendar</Button>
           </div>
         </div>
       )))}
@@ -42,15 +41,15 @@ export default ({ data }) => {
       </div>
 
       <div>
-        <button>TODO: Donate on Patreon</button>
+        <Button>TODO: Donate on Patreon</Button>
       </div>
 
       <div>
-        <button>TODO: Donate via Paypal</button>
+        <Button>TODO: Donate via Paypal</Button>
       </div>
 
       <div>
-        <button>TODO: Official Shop</button>
+        <Button>TODO: Official Shop</Button>
       </div>
 
       <ul>
@@ -68,7 +67,7 @@ const SocialLinkItem = ({link, name}) => {
   if (!link || !name) return null;
 
   return (
-    <li><a href={link}>{name}</a></li>
+    <li><a href={link} target="_blank">{name}</a></li>
   )
 }
 
