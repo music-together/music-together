@@ -68,4 +68,7 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+# JetBrians
+.idea
+
 .env.development

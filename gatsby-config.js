@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `VideoGraphy`,
-    description: `Kick off your next, great Gatsby & Airtable project with this starter.`,
+    title: `MusicGather`,
+    description: `Watch livestreams of artists across ontario.`,
     author: `@smakosh`,
   },
   plugins: [
@@ -33,6 +33,10 @@ module.exports = {
           {
             baseId: process.env.SCENES_BASE_ID,
             tableName: "Artists",
+          },
+          {
+            baseId: process.env.SCENES_BASE_ID,
+            tableName: "Schedule (test - Marlow)",
           },
         ],
       },

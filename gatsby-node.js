@@ -12,10 +12,11 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     const sceneTemplate = path.resolve("./src/templates/artist.js")
     const { data, errors } = await graphql(`
       {
-        airtable: allAirtable(filter: { table: { eq: "Artists" } }) {
+        artists: allAirtable(filter: { table: { eq: "Artists" } }) {
           edges {
             node {
               id
+              recordId
             }
           }
         }
@@ -26,17 +27,17 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       throw new Error(errors)
     }
 
-    data.airtable.edges.forEach(({ node: { id } }) => {
+    data.artists.edges.forEach(({ node: { recordId } }) => {
       createPage({
-        path: id,
+        path: `artist/${recordId}`,
         component: sceneTemplate,
         context: {
-          id,
+          recordId,
         },
       })
     })
   } catch (error) {
-    console.log(errors)
+    console.log(error)
   }
 }
 

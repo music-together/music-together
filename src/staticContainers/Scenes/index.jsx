@@ -1,14 +1,13 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import SEO from "components/common/SEO"
 import Container from "components/common/Container"
-import Card from "components/common/Card"
-import { Wrapper, Flex, CardScene } from "./styles"
+import { Wrapper, Flex } from "./styles"
 
 export default () => {
   const { airtable } = useStaticQuery(graphql`
     query {
-      airtable: allAirtable(filter: { table: { eq: "Artists" } }) {
+      airtable: allAirtable(filter: { table: { eq: "Schedule (test - Marlow)" } }) {
         edges {
           node {
             id

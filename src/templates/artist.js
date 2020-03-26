@@ -3,14 +3,9 @@ import { graphql } from "gatsby"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
 import Header from "components/theme/Header"
-import Scene from "staticContainers/Scene"
 
 export default ({
-  data//: {
-    // airtable: {
-    //   data: { Genre },
-    // },
-  // },
+  data
 }) => (
   <Layout>
     <SEO title={'test'} />
@@ -22,11 +17,43 @@ export default ({
 )
 
 export const sceneQuery = graphql`
-  query($id: String!) {
-    airtable(table: { eq: "Artists" }, id: { eq: $id }) {
-      data {
-        Genre
-      }
+  query($recordId: String!) {
+    airtable(table: { eq: "Artists" }, recordId: { eq: $recordId }) {
+        data {
+            Name
+            Genre
+            Email
+            Phone
+            Audience
+            Bio
+            COVID_19
+            Cross_Promotion
+            Disclaimer
+            Facebook
+            Instagram
+            Location
+            Online_Store
+            Past_Gigs
+            Performance_Type
+            Postal_Code
+            Press_Image {
+                thumbnails {
+                    large {
+                        url
+                    }
+                }
+            }
+            Representation
+            Representation_Name
+            Soundcloud
+            Source_of_Income
+            Spotify
+            Test_Artist
+            Time_slot
+            Twitter
+            Website
+            Youtube
+        }
     }
   }
 `
