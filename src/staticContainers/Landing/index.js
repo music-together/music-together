@@ -1,13 +1,11 @@
-import React from 'react';
-import styled from 'styled-components'
-import Header from './header'
-import Schedule from './schedule'
+import React from "react"
+import styled from "styled-components"
+import Schedule from "./schedule"
 
 const LandingContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: black;
-  background-image: url('./schedule-background.png');
   background-repeat: no-repeat;
   background-position: top center;
   position: relative;
@@ -18,7 +16,7 @@ const HeroBlock = styled.div`
   height: 662px;
   position: relative;
   @media (max-width: 600px) {
-      height: 20px;
+    height: 20px;
   }
 `
 
@@ -30,7 +28,7 @@ const HeroContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   @media (max-width: 600px) {
-      display: none;
+    display: none;
   }
 `
 
@@ -39,7 +37,6 @@ const HeroPredicateBlock = styled.div`
   padding: 6px 10px;
   color: black;
   text-transform: uppercase;
-  font-family: Arial;
   font-style: normal;
   font-weight: bold;
   font-size: 16.7615px;
@@ -55,7 +52,6 @@ const HeroSubjectBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial;
   font-style: normal;
   font-weight: bold;
   font-size: 16.7615px;
@@ -66,16 +62,15 @@ const HeroSubjectBlock = styled.div`
 function LandingPage() {
   return (
     <LandingContainer>
-      <Header/>
       <HeroBlock>
         <HeroContainer>
           <HeroPredicateBlock>Enjoy</HeroPredicateBlock>
           <HeroSubjectBlock>Local Musicians</HeroSubjectBlock>
         </HeroContainer>
       </HeroBlock>
-      <Schedule/>
+      <Schedule />
     </LandingContainer>
-  );
+  )
 }
 
-export default LandingPage;
+export default LandingPage

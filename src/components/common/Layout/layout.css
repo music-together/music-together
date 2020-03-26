@@ -76,3 +76,12 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* Base styles */
+
+html {
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: white;
+  background: black;
+}
