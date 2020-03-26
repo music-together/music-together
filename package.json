@@ -26,6 +26,7 @@
     "react-content-loader": "^5.0.2",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.9.0",
     "styled-components": "^5.0.1",
     "unnamed": "^1.2.6"
   },

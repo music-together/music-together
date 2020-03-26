@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Button } from "components"
 import Layout from "components/common/Layout"
 import {NarrowContainer} from "components/NarrowContainer"
+import {SocialLink} from 'components/SocialLink'
 import SEO from "components/common/SEO"
 
 export default ({ data }) => {
@@ -54,25 +55,18 @@ export default ({ data }) => {
           <Button>TODO: Official Shop</Button>
         </div>
 
-        <ul>
-          <SocialLinkItem link={artist.Facebook} name="Facebook" />
-          <SocialLinkItem link={artist.Instagram} name="Instagram" />
-          <SocialLinkItem link={artist.Twitter} name="Twitter" />
-          <SocialLinkItem link={artist.Spotify} name="Spotify" />
-          <SocialLinkItem link={artist.Youtube} name="Youtube" />
-        </ul>
+        <center>
+          <SocialLink link={artist.Facebook} />
+          <SocialLink link={artist.Instagram} />
+          <SocialLink link={artist.Twitter} />
+          <SocialLink link={artist.Spotify} type="spotify" />
+          <SocialLink link={artist.Youtube} type="youtube" />
+        </center>
       </NarrowContainer>
     </Layout>
   );
 }
 
-const SocialLinkItem = ({link, name}) => {
-  if (!link || !name) return null;
-
-  return (
-    <li><a href={link} target="_blank" rel="noopener noreferrer">{name}</a></li>
-  )
-}
 
 export const sceneQuery = graphql`
   query($recordId: String!) {
