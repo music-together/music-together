@@ -88,7 +88,7 @@ export function Footer() {
         <Section>
           <ul>
             <li>
-              <Link>Apply to perform</Link>
+              <Link to="/apply">Apply to perform</Link>
             </li>
             <li>
               <Link>Sponsors</Link>
