@@ -121,7 +121,6 @@ export const sceneQuery = graphql`
         Representation
         Representation_Name
         Soundcloud
-        Source_of_Income
         Spotify
         Test_Artist
         Time_slot
