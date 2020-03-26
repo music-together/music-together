@@ -34,8 +34,8 @@ export default () => {
 
           return (
             <CardScene key={data.recordId}>
-              {data.Show_time} (<Link to={`artist/${data.Artist}`}>Artist</Link>
-              )
+              {data.Show_time}
+              (<Link to={`artist/${data.Artist}`}>Artist</Link>)
             </CardScene>
           )
         })}

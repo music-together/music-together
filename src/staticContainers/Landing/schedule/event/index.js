@@ -54,6 +54,17 @@ const PlatformTextView = styled.div`
   font-size: 16px;
 `
 
+const DateTextView = styled.div`
+  text-transform: uppercase;
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0.07em;
+  padding: 20px 0;
+`
+
 class ScheduledEvent extends React.Component {
   formatTime(date) {
     var hours = date.getHours();
@@ -70,6 +81,9 @@ class ScheduledEvent extends React.Component {
 
     return (
       <ScheduledEventContainer>
+        <DateTextView>
+          {date}
+        </DateTextView>
         <ArtistContainer>
           <ArtistTextView>{artistName}</ArtistTextView>
           <GenreTextView>{genre}</GenreTextView>
