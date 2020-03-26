@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `MusicGather`,
+    title: `MusicTogether`,
     description: `Watch livestreams of artists across ontario.`,
     author: `@smakosh`,
   },
