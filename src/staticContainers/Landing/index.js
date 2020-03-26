@@ -1,75 +1,48 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
+import { Heading, Text } from "components"
 import Schedule from "./schedule"
 
-const LandingContainer = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background-color: black;
-  background-repeat: no-repeat;
-  background-position: top center;
-  position: relative;
-`
-
-const HeroBlock = styled.div`
-  background-color: transparent;
-  height: 662px;
-  position: relative;
-  @media (max-width: 600px) {
-    height: 20px;
-  }
-`
-
 const HeroContainer = styled.div`
-  display: flex;
-  width: fit-content;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  @media (max-width: 600px) {
-    display: none;
+  text-align: center;
+  margin: var(--spacing--tight) 0 var(--spacing--loose);
+`
+
+const Action = styled(Link)`
+  font-size: var(--font-size--medium);
+  text-decoration: underline;
+  text-transform: uppercase;
+
+  &:first-of-type {
+    margin-right: var(--spacing--base);
   }
 `
 
-const HeroPredicateBlock = styled.div`
-  background-color: white;
-  padding: 6px 10px;
-  color: black;
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16.7615px;
-  line-height: 20px;
-  letter-spacing: 0.12em;
-`
-
-const HeroSubjectBlock = styled.div`
-  background-color: transparent;
-  color: white;
-  text-transform: uppercase;
-  margin-left: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16.7615px;
-  line-height: 20px;
-  letter-spacing: 0.12em;
+const TextWrapper = styled.div`
+  max-width: 450px;
+  margin: var(--spacing--tight) auto var(--spacing--base);
 `
 
 function LandingPage() {
   return (
-    <LandingContainer>
-      <HeroBlock>
-        <HeroContainer>
-          <HeroPredicateBlock>Enjoy</HeroPredicateBlock>
-          <HeroSubjectBlock>Local Musicians</HeroSubjectBlock>
-        </HeroContainer>
-      </HeroBlock>
+    <>
+      <HeroContainer>
+        <Heading size="large" bold>
+          Support Ontario artists without leaving home
+        </Heading>
+        <TextWrapper>
+          <Text>
+            Enjoy a night of live music and give back to your local music
+            community
+          </Text>
+        </TextWrapper>
+
+        <Action>Apply to perform</Action>
+        <Action>Donate</Action>
+      </HeroContainer>
       <Schedule />
-    </LandingContainer>
+    </>
   )
 }
 
