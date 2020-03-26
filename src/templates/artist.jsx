@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Button } from "components"
 import Layout from "components/common/Layout"
+import {NarrowContainer} from "components/NarrowContainer"
 import SEO from "components/common/SEO"
 
 export default ({ data }) => {
@@ -15,50 +16,52 @@ export default ({ data }) => {
       <SEO title={artist.Name} description={artist.Bio} />
 
       {/* TODO: All Artists link */}
-      <h1>{artist.Name}</h1>
-      <p>{artist.Genre.join(', ')}</p>
+      <NarrowContainer>
+        <h1>{artist.Name}</h1>
+        <p>{artist.Genre.join(', ')}</p>
 
-      {(artist.Press_Image || []).map(pressImage => (
-        <div key={pressImage.id}>
-          <img alt={artist.Name} src={pressImage.thumbnails.large.url} />
-        </div>
-      ))}
-
-      {(schedule.map(node => (
-        <div key={node.id}>
-          <h3>{new Date(node.data.Show_time).toLocaleString()}</h3>
-          <div>
-            <a href={node.data.Stream_Link}>{node.data.Stream_Name}</a>
+        {(artist.Press_Image || []).map(pressImage => (
+          <div key={pressImage.id}>
+            <img alt={artist.Name} src={pressImage.thumbnails.large.url} />
           </div>
-          <div>
-            <Button>TODO: Add to Calendar</Button>
+        ))}
+
+        {(schedule.map(node => (
+          <div key={node.id}>
+            <h3>{new Date(node.data.Show_time).toLocaleString()}</h3>
+            <div>
+              <a href={node.data.Stream_Link}>{node.data.Stream_Name}</a>
+            </div>
+            <div>
+              <Button>TODO: Add to Calendar</Button>
+            </div>
           </div>
+        )))}
+
+        <div>
+          {artist.Bio}
         </div>
-      )))}
 
-      <div>
-        {artist.Bio}
-      </div>
+        <div>
+          <Button>TODO: Donate on Patreon</Button>
+        </div>
 
-      <div>
-        <Button>TODO: Donate on Patreon</Button>
-      </div>
+        <div>
+          <Button>TODO: Donate via Paypal</Button>
+        </div>
 
-      <div>
-        <Button>TODO: Donate via Paypal</Button>
-      </div>
+        <div>
+          <Button>TODO: Official Shop</Button>
+        </div>
 
-      <div>
-        <Button>TODO: Official Shop</Button>
-      </div>
-
-      <ul>
-        <SocialLinkItem link={artist.Facebook} name="Facebook" />
-        <SocialLinkItem link={artist.Instagram} name="Instagram" />
-        <SocialLinkItem link={artist.Twitter} name="Twitter" />
-        <SocialLinkItem link={artist.Spotify} name="Spotify" />
-        <SocialLinkItem link={artist.Youtube} name="Youtube" />
-      </ul>
+        <ul>
+          <SocialLinkItem link={artist.Facebook} name="Facebook" />
+          <SocialLinkItem link={artist.Instagram} name="Instagram" />
+          <SocialLinkItem link={artist.Twitter} name="Twitter" />
+          <SocialLinkItem link={artist.Spotify} name="Spotify" />
+          <SocialLinkItem link={artist.Youtube} name="Youtube" />
+        </ul>
+      </NarrowContainer>
     </Layout>
   );
 }
