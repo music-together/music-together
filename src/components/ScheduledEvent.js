@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from "gatsby"
 import styled from 'styled-components'
+import { Link } from "gatsby"
 
 const ScheduledEventContainer = styled.div`
   width: 100%;
@@ -8,6 +8,15 @@ const ScheduledEventContainer = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   padding-bottom: 24px;
   margin-bottom: 24px;
+`
+
+const ArtistThumbnailContainer = styled.div`
+  margin-right: 12px;
+  max-width: 106px;
+  
+  @media (max-width: 600px) {
+    max-width: 42px;
+  }
 `
 
 const ArtistContainer = styled.div`
@@ -20,21 +29,34 @@ const TimeContainer = styled.div`
   width: fit-content;
 `
 
-const ArtistTextView = styled(Link)`
+const ArtistLink = styled(Link)`
   color: white;
   font-family: Arial;
   font-style: normal;
   font-weight: normal;
-  font-size: 32px;
+  font-size: 24px;
+  line-height: 28px;
+  margin-right: 8px;
+  
+  @media (max-width: 600px) {
+    font-size: 19px;
+    line-height: 23px;
+  }
 `
 
 const GenreTextView = styled.div`
   color: white;
-  opacity: 0.5;
+  opacity: 0.8;
   font-family: PT Mono;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 24px;
+  
+  @media (max-width: 600px) {
+    font-size: 13px;
+    line-height: 15px;
+  }
 `
 
 const TimeTextView = styled.div`
@@ -43,40 +65,52 @@ const TimeTextView = styled.div`
   font-family: Arial;
   font-style: normal;
   font-weight: normal;
-  font-size: 32px;
-`
-const PlatformTextView = styled.div`
-  color: white;
-  opacity: 0.5;
-  text-align: right;
-  font-family: PT Mono;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
+  font-size: 24px;
+  line-height: 28px;
+  
+  @media (max-width: 600px) {
+    font-size: 19px;
+    line-height: 23px;
+  }
 `
 
 const defaultArtists = ['No one']
 
-const formatName = artistName => artistName
-const formatTime = () => "9pm"
+const formatNames = (artists) => {
+  let artistNames = artists.map(artist => artist.data.Name);
+  if (artistNames.length === 0) {
+    artistNames = defaultArtists;
+  }
+  return artistNames.join(' + ')
+}
 
-export const ScheduledEvent = ({event}) => {
-  const  { artistName, genre, date, platform } = event || {};
+const getArtistImageUrl = (artists) => {
+  if ((artists[0].data.Press_Image || []).length === 0) {
+    return null;
+  }
+  return artists[0].data.Press_Image[0].thumbnails.large.url;
+}
 
-  const time = formatTime(date || Date.now());
-  const artists = event.Artist || defaultArtists
+export const ScheduledEvent = ({event, artists}) => {
+  const artistNames = formatNames(artists);
+  const artistImageUrl = getArtistImageUrl(artists);
+  const genres = artists.reduce((acc, artist) => [...acc, ...artist.data.Genre], []).join(', ');
+
+  // const time = formatTime(date || Date.now());
 
   return (
     <ScheduledEventContainer>
+      {artistImageUrl &&
+      <ArtistThumbnailContainer>
+        <img alt={artistNames} src={artistImageUrl} />
+      </ArtistThumbnailContainer>
+      }
       <ArtistContainer>
-        {artists.map(artist =>
-          <ArtistTextView to={`/artist/${artist}`}>{formatName(artist)}</ArtistTextView>
-        )}
-        <GenreTextView>{genre}</GenreTextView>
+        {artists.map(artist => <ArtistLink to={`/artist/${artist.recordId}`}>{artist.data.Name}</ArtistLink>)}
+        <GenreTextView>{genres}</GenreTextView>
       </ArtistContainer>
       <TimeContainer>
-        <TimeTextView>{time}</TimeTextView>
-        <PlatformTextView>{platform}</PlatformTextView>
+        <TimeTextView>TODO</TimeTextView>
       </TimeContainer>
     </ScheduledEventContainer>
   );

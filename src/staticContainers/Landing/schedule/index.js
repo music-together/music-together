@@ -33,9 +33,9 @@ const BottomSpacer = styled.div`
 `
 
 export default () => {
-  const { schedule, artists } = useStaticQuery(graphql`
+  const { scheduleResult, artistsResult } = useStaticQuery(graphql`
     query {
-      schedule: allAirtable(
+      scheduleResult: allAirtable(
         filter: { table: { eq: "Schedule" } }
       ) {
         edges {
@@ -53,7 +53,7 @@ export default () => {
         }
       }
 
-      artists: allAirtable(
+      artistsResult: allAirtable(
         filter: { table: { eq: "Artists" } }
       ) {
         edges {
@@ -62,6 +62,7 @@ export default () => {
             data {
               # Artist info
               Name
+              Genre
               Representation_Name
               Performance_Type
               Audience
@@ -69,6 +70,14 @@ export default () => {
               Phone
               COVID_19
               Bio
+              Press_Image {
+                id
+                thumbnails {
+                  large {
+                    url
+                  }
+                }
+              }
 
               # Social
               Soundcloud
@@ -93,12 +102,14 @@ export default () => {
     }
   `)
 
-  const newDate = new Date().toLocaleString()
+  const schedule = scheduleResult.edges.map(edge => edge.node)
+  const artists = artistsResult.edges.reduce((acc, curr) => {
+    acc[curr.node.recordId] = curr.node;
+    return acc;
+  }, {});
 
   return (
     <NarrowContainer>
-      <h1>Schedule</h1>
-
       <EventList events={schedule} artists={artists} />
 
       <LoadMoreButton onClick={() => console.error('load more!!!')}>Load more</LoadMoreButton>

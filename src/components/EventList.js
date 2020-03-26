@@ -1,35 +1,43 @@
 import React from "react"
-import {ScheduledEvent} from "components/ScheduledEvent"
+import { ScheduledEvent } from "components/ScheduledEvent"
+import styled from "styled-components"
 
-export const EventList = ({events, artists}) => {
-  const artistMap = new Map()
-  events = events.edges.map(({node: event}) => {
+const EventListHeading = styled.h3`
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.07em;
+  margin-bottom: 24px;
 
-    return {
-      id: event.recordId,
-      ...event.data,
-    }
-  })
+  color: #ffffff;
+  
+  @media (max-width: 600px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+`
 
-  events.forEach(event =>
-    event.artists = (event.Artist || []).map(artistID => artistMap.get(artistID)),
-  )
+export const EventList = ({ events, artists }) => (
+  <div>
+    <EventListHeading>TODO: TOMORROW</EventListHeading>
 
-  console.log("Schedule:", events)
-  console.log("Artists:", artists)
-  console.log("ArtistMap:", artistMap)
+    {events.map((event) => {
+      const eventArtists = (event.data.Artist || []).map(
+        (artistRecordId) => artists[artistRecordId]
+      )
+      if (eventArtists.length === 0) {
+        return null;
+      }
 
-  return (
-    <div>
-      {events.map((event) => (
+      return (
         <ScheduledEvent
-          key={event.id}
-          artists={artists}
+          key={event.recordId}
+          artists={eventArtists}
           event={event}
         />
-      ))}
-    </div>
-  )
-}
-
-
+      )
+    })}
+  </div>
+)
