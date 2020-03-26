@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby"
 import styled from 'styled-components'
 
 const ScheduledEventContainer = styled.div`
@@ -19,7 +20,7 @@ const TimeContainer = styled.div`
   width: fit-content;
 `
 
-const ArtistTextView = styled.div`
+const ArtistTextView = styled(Link)`
   color: white;
   font-family: Arial;
   font-style: normal;
@@ -56,18 +57,21 @@ const PlatformTextView = styled.div`
 
 const defaultArtists = ['No one']
 
-const formatName = event => (event.Artist || defaultArtists).join(' + ');
+const formatName = artistName => artistName
 const formatTime = () => "9pm"
 
-export const ScheduledEvent = ({event, artists}) => {
-  const  { artistName, genre, date, platform } = event;
+export const ScheduledEvent = ({event}) => {
+  const  { artistName, genre, date, platform } = event || {};
 
   const time = formatTime(date || Date.now());
+  const artists = event.Artist || defaultArtists
 
   return (
     <ScheduledEventContainer>
       <ArtistContainer>
-        <ArtistTextView>{formatName(event)}</ArtistTextView>
+        {artists.map(artist =>
+          <ArtistTextView to={`/artist/${artist}`}>{formatName(artist)}</ArtistTextView>
+        )}
         <GenreTextView>{genre}</GenreTextView>
       </ArtistContainer>
       <TimeContainer>

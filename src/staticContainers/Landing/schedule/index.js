@@ -2,7 +2,6 @@ import React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import {NarrowContainer} from 'components/NarrowContainer'
 import styled from "styled-components"
-import {ScheduledEvent} from "components/ScheduledEvent"
 import {EventList} from "components/EventList"
 
 const LoadMoreButton = styled.button`
@@ -101,7 +100,6 @@ export default () => {
       <h1>Schedule</h1>
 
       <EventList events={schedule} artists={artists} />
-
 
       <LoadMoreButton onClick={() => console.error('load more!!!')}>Load more</LoadMoreButton>
       <BottomSpacer />
