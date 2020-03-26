@@ -36,7 +36,7 @@ const Logo = styled.h1`
   color: white;
 `
 
-function Header() {
+export function Header() {
   return (
     <HeaderContainer>
       <Logo>MusicTogether</Logo>
@@ -44,5 +44,3 @@ function Header() {
     </HeaderContainer>
   )
 }
-
-export default Header
