@@ -1,16 +1,8 @@
 import React from "react"
 import {useStaticQuery, graphql} from "gatsby"
+import {NarrowContainer} from 'components/NarrowContainer'
 import styled from "styled-components"
 import ScheduledEvent from "./event"
-
-const ScheduleContainer = styled.div`
-  max-width: 686px;
-  background-color: transparent;
-  margin: 0 auto;
-  @media (max-width: 600px) {
-    margin: 0 20px;
-  }
-`
 
 const LoadMoreButton = styled.button`
   height: 54px;
@@ -41,7 +33,7 @@ const BottomSpacer = styled.div`
 `
 
 export default () => {
-  const { schedule } = useStaticQuery(graphql`
+  const { schedule, artists } = useStaticQuery(graphql`
     query {
       schedule: allAirtable(
         filter: { table: { eq: "Schedule" } }
@@ -54,6 +46,46 @@ export default () => {
               Artist
               Show_time
               Notes
+              Stream_Name
+              Stream_Link
+            }
+          }
+        }
+      }
+
+      artists: allAirtable(
+        filter: { table: { eq: "Artists" } }
+      ) {
+        edges {
+          node {
+            recordId
+            data {
+              # Artist info
+              Name
+              Representation_Name
+              Performance_Type
+              Audience
+              Email
+              Phone
+              COVID_19
+              Bio
+
+              # Social
+              Soundcloud
+              Spotify
+              Website
+              Facebook
+              Online_Store
+              Instagram
+              Twitter
+              Youtube
+
+              # Metadata
+              Location
+              Past_Gigs
+              Notes
+              Stream_Name
+              Stream_Link
             }
           }
         }
@@ -62,11 +94,12 @@ export default () => {
   `)
 
   console.log("Schedule:", schedule)
+  console.log("Artists:", artists)
 
   const newDate = new Date().toLocaleString()
 
   return (
-    <ScheduleContainer>
+    <NarrowContainer>
       <h1>Schedule</h1>
       {schedule.edges.map(({ node: { data } }) => (
         <ScheduledEvent
@@ -86,7 +119,7 @@ export default () => {
       {/*   {data.Show_time} */}
       {/*   (<Link to={`artist/${data.Artist}`}>Artist</Link>) */}
       {/* </CardScene> */}
-    </ScheduleContainer>
+    </NarrowContainer>
   )
 }
 

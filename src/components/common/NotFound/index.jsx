@@ -1,7 +1,7 @@
 import React from "react"
 import SEO from "components/common/SEO"
 import Layout from "components/common/Layout"
-import Header from "components/theme/Header"
+import {Header} from "components/theme/Header"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
