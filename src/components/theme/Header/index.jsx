@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import logo from "../../../assets/logo.svg"
+import { Link } from "gatsby"
 
 const HeaderContainer = styled.div`
   background-color: transparent;
@@ -12,7 +13,9 @@ const HeaderContainer = styled.div`
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={logo} alt="Music together" />
+      <Link to="/">
+        <img src={logo} alt="Music together" />
+      </Link>
     </HeaderContainer>
   )
 }
