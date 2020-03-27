@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 import { Link } from "gatsby"
 
 const ScheduledEventContainer = styled.div`
@@ -13,7 +13,7 @@ const ScheduledEventContainer = styled.div`
 const ArtistThumbnailContainer = styled.div`
   margin-right: 12px;
   max-width: 106px;
-  
+
   @media (max-width: 600px) {
     max-width: 42px;
   }
@@ -37,7 +37,7 @@ const ArtistLink = styled(Link)`
   font-size: 24px;
   line-height: 28px;
   margin-right: 8px;
-  
+
   @media (max-width: 600px) {
     font-size: 19px;
     line-height: 23px;
@@ -52,7 +52,7 @@ const GenreTextView = styled.div`
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
-  
+
   @media (max-width: 600px) {
     font-size: 13px;
     line-height: 15px;
@@ -67,52 +67,66 @@ const TimeTextView = styled.div`
   font-weight: normal;
   font-size: 24px;
   line-height: 28px;
-  
+
   @media (max-width: 600px) {
     font-size: 19px;
     line-height: 23px;
   }
 `
 
-const defaultArtists = ['No one']
+const defaultArtists = ["No one"]
 
 const formatNames = (artists) => {
-  let artistNames = artists.map(artist => artist.data.Name);
+  let artistNames = artists.map((artist) => artist.data.Name)
   if (artistNames.length === 0) {
-    artistNames = defaultArtists;
+    artistNames = defaultArtists
   }
-  return artistNames.join(' + ')
+  return artistNames.join(" + ")
 }
 
 const getArtistImageUrl = (artists) => {
   if ((artists[0].data.Press_Image || []).length === 0) {
-    return null;
+    return null
   }
-  return artists[0].data.Press_Image[0].thumbnails.large.url;
+  return artists[0].data.Press_Image[0].thumbnails.large.url
 }
 
-export const ScheduledEvent = ({event, artists}) => {
-  const artistNames = formatNames(artists);
-  const artistImageUrl = getArtistImageUrl(artists);
-  const genres = artists.reduce((acc, artist) => [...acc, ...artist.data.Genre], []).join(', ');
+export const ScheduledEvent = ({ event, artists }) => {
+  const artistNames = formatNames(artists)
+  const artistImageUrl = getArtistImageUrl(artists)
+  const genres = artists
+    .reduce((acc, artist) => {
+      if (artist.data.Genre == null) {
+        return acc
+      }
+
+      return [...acc, ...artist.data.Genre]
+    }, [])
+    .join(", ")
 
   // const time = formatTime(date || Date.now());
 
   return (
     <ScheduledEventContainer>
-      {artistImageUrl &&
-      <ArtistThumbnailContainer>
-        <img alt={artistNames} src={artistImageUrl} />
-      </ArtistThumbnailContainer>
-      }
+      {artistImageUrl && (
+        <ArtistThumbnailContainer>
+          <img alt={artistNames} src={artistImageUrl} />
+        </ArtistThumbnailContainer>
+      )}
       <ArtistContainer>
-        {artists.map(artist => <ArtistLink to={`/artist/${artist.recordId}`}>{artist.data.Name}</ArtistLink>)}
+        {artists.map((artist) => (
+          <ArtistLink to={`/artist/${artist.recordId}`}>
+            {artist.data.Name}
+          </ArtistLink>
+        ))}
         <GenreTextView>{genres}</GenreTextView>
       </ArtistContainer>
-      <TimeContainer>
-        <TimeTextView>TODO</TimeTextView>
-      </TimeContainer>
-    </ScheduledEventContainer>
-  );
-}
 
+      {event && (
+        <TimeContainer>
+          <TimeTextView>TODO</TimeTextView>
+        </TimeContainer>
+      )}
+    </ScheduledEventContainer>
+  )
+}
