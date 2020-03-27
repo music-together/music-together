@@ -5,7 +5,7 @@ const Large = styled.h2`
   font-size: var(--font-size--large);
   font-weight: ${(props) => (props.bold ? "900" : "normal")};
   letter-spacing: 0.07em;
-  margin-bottom: var(--spacing--base);
+  margin-bottom: var(--spacing--tight);
 `
 
 const XLarge = styled.h2`
