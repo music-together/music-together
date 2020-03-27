@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Button } from "components"
+import { Button, Heading, Text } from "components"
 import Layout from "components/common/Layout"
-import {NarrowContainer} from "components/NarrowContainer"
-import {SocialLink} from 'components/SocialLink'
+import { NarrowContainer } from "components/NarrowContainer"
+import { SocialLink } from "components/SocialLink"
 import SEO from "components/common/SEO"
 
 export default ({ data }) => {
-  const artist = data.artist.data;
+  const artist = data.artist.data
   const schedule = data.schedule.edges
-    .map(edge => edge.node)
-    .filter(node => !!node.data.Show_time);
+    .map((edge) => edge.node)
+    .filter((node) => !!node.data.Show_time)
 
   return (
     <Layout>
@@ -18,16 +18,16 @@ export default ({ data }) => {
 
       {/* TODO: All Artists link */}
       <NarrowContainer>
-        <h1>{artist.Name}</h1>
-        <p>{artist.Genre.join(', ')}</p>
+        <Heading size="xlarge">{artist.Name}</Heading>
+        <Text subdued>{artist.Genre.join(", ")}</Text>
 
-        {(artist.Press_Image || []).map(pressImage => (
+        {(artist.Press_Image || []).map((pressImage) => (
           <div key={pressImage.id}>
             <img alt={artist.Name} src={pressImage.thumbnails.large.url} />
           </div>
         ))}
 
-        {(schedule.map(node => (
+        {schedule.map((node) => (
           <div key={node.id}>
             <h3>{new Date(node.data.Show_time).toLocaleString()}</h3>
             <div>
@@ -37,11 +37,9 @@ export default ({ data }) => {
               <Button>TODO: Add to Calendar</Button>
             </div>
           </div>
-        )))}
+        ))}
 
-        <div>
-          {artist.Bio}
-        </div>
+        <div>{artist.Bio}</div>
 
         <div>
           <Button>TODO: Donate on Patreon</Button>
@@ -64,13 +62,14 @@ export default ({ data }) => {
         </center>
       </NarrowContainer>
     </Layout>
-  );
+  )
 }
-
 
 export const sceneQuery = graphql`
   query($recordId: String!) {
-    schedule: allAirtable(filter: {table: {eq: "Schedule"}, data:{ Artist:{eq: $recordId}}}) {
+    schedule: allAirtable(
+      filter: { table: { eq: "Schedule" }, data: { Artist: { eq: $recordId } } }
+    ) {
       edges {
         node {
           id

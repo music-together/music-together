@@ -29,10 +29,14 @@ dd {
   margin: 0;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,700,900&display=swap");
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Rubik, Helvetica, sans;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-transform: capitalize;
 }
 
@@ -87,8 +91,9 @@ select {
 /* Base styles */
 
 html {
-  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Rubik, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   color: white;
   background: black;
 }
@@ -118,7 +123,8 @@ a:hover {
 
   --font-size--default: 16px;
   --font-size--medium: 20px;
-  --font-size--large: 36px;
+  --font-size--large: 24px;
+  --font-size--xlarge: 36px;
 
   --spacing--xtight: 10px;
   --spacing--tight: 20px;

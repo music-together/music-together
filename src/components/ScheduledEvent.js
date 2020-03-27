@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { Text } from "components"
 
 const ScheduledEventContainer = styled.div`
   width: 100%;
@@ -30,48 +31,8 @@ const TimeContainer = styled.div`
 `
 
 const ArtistLink = styled(Link)`
-  color: white;
-  font-family: Arial;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: var(--font-size--large);
   margin-right: 8px;
-
-  @media (max-width: 600px) {
-    font-size: 19px;
-    line-height: 23px;
-  }
-`
-
-const GenreTextView = styled.div`
-  color: white;
-  opacity: 0.8;
-  font-family: PT Mono;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-
-  @media (max-width: 600px) {
-    font-size: 13px;
-    line-height: 15px;
-  }
-`
-
-const TimeTextView = styled.div`
-  color: white;
-  text-align: right;
-  font-family: Arial;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-
-  @media (max-width: 600px) {
-    font-size: 19px;
-    line-height: 23px;
-  }
 `
 
 const defaultArtists = ["No one"]
@@ -119,12 +80,12 @@ export const ScheduledEvent = ({ event, artists }) => {
             {artist.data.Name}
           </ArtistLink>
         ))}
-        <GenreTextView>{genres}</GenreTextView>
+        <Text subdued>{genres}</Text>
       </ArtistContainer>
 
       {event && (
         <TimeContainer>
-          <TimeTextView>TODO</TimeTextView>
+          <Text>TODO</Text>
         </TimeContainer>
       )}
     </ScheduledEventContainer>
