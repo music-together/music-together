@@ -76,14 +76,11 @@ export const sceneQuery = graphql`
       edges {
         node {
           id
+          recordId
           data {
             Artist
-            Order
             Show_time
-            Stream_Link
-            Notes
           }
-          recordId
         }
       }
     }

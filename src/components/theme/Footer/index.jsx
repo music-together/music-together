@@ -89,6 +89,9 @@ export function Footer() {
             <li>
               <Link to="#">Shop</Link>
             </li>
+            <li>
+              <a href="mailto:info@musictogether.ca" target="_blank" rel="noopener noreferrer">Contact</a>
+            </li>
           </ul>
         </Section>
       </Links>
