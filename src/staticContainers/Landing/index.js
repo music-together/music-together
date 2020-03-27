@@ -6,7 +6,11 @@ import Schedule from "./schedule"
 
 const HeroContainer = styled.div`
   text-align: center;
-  margin: var(--spacing--tight) 0 var(--spacing--loose);
+  margin: var(--spacing--tight) var(--spacing--xtight) var(--spacing--loose);
+
+  & h2 {
+    line-height: 1.2em;
+  }
 `
 
 const Action = styled(Link)`
