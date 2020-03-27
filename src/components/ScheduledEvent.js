@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Text } from "components"
+import { format } from 'date-fns'
 
 const ScheduledEventContainer = styled.div`
   width: 100%;
@@ -10,6 +11,7 @@ const ScheduledEventContainer = styled.div`
   padding-bottom: var(--spacing--tight);
   margin-bottom: var(--spacing--tight);
   align-items: center;
+  justify-content: flex-start;
 `
 
 const ArtistThumbnailContainer = styled.div`
@@ -37,7 +39,9 @@ const ArtistContainer = styled.div`
 
 const TimeContainer = styled.div`
   height: 100%;
-  width: fit-content;
+  margin-left: auto;
+  width: 100px;
+  text-align: right;
 `
 
 const ArtistLink = styled(Link)`
@@ -66,16 +70,10 @@ export const ScheduledEvent = ({ event, artists }) => {
   const artistNames = formatNames(artists)
   const artistImageUrl = getArtistImageUrl(artists)
   const genres = artists
-    .reduce((acc, artist) => {
-      if (artist.data.Genre == null) {
-        return acc
-      }
-
-      return [...acc, ...artist.data.Genre]
-    }, [])
+    .filter(artist => !!artist.data.Genre)
+    .reduce((acc, artist) => [...acc, ...artist.data.Genre], [])
     .join(", ")
-
-  // const time = formatTime(date || Date.now());
+  const formattedTime = event ? format(new Date(event.data.Show_time), 'K a') : null
 
   return (
     <ScheduledEventContainer>
@@ -93,9 +91,9 @@ export const ScheduledEvent = ({ event, artists }) => {
         <Text subdued>{genres}</Text>
       </ArtistContainer>
 
-      {event && (
+      {formattedTime && (
         <TimeContainer>
-          <Text>TODO</Text>
+          <Text>{formattedTime}</Text>
         </TimeContainer>
       )}
     </ScheduledEventContainer>

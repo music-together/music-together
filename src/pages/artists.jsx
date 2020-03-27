@@ -15,9 +15,10 @@ export default ({ data }) => {
         <Heading size="large" bold>
           Artists
         </Heading>
-        {data.artists.edges.map(({ node }) => (
-          <ScheduledEvent artists={[node]} />
-        ))}
+        {data.artists.edges.map(({ node }) => {
+          if (!node || !node.data.Name) return null;
+          return <ScheduledEvent artists={[node]} />
+        })}
       </NarrowContainer>
     </Layout>
   )

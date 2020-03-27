@@ -84,7 +84,6 @@ export const sceneQuery = graphql`
             Order
             Show_time
             Stream_Link
-            Stream_Name
             Notes
           }
           recordId
@@ -123,7 +122,6 @@ export const sceneQuery = graphql`
         Representation_Name
         Soundcloud
         Spotify
-        Test_Artist
         Time_slot
         Twitter
         Website
