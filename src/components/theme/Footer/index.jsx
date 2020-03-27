@@ -78,6 +78,9 @@ export function Footer() {
               <Link to="/artist-apply">Apply to perform</Link>
             </li>
             <li>
+              <Link to="/support">Support the artists</Link>
+            </li>
+            <li>
               <Link to="/sponsors">Sponsors</Link>
             </li>
             <li>
@@ -85,9 +88,6 @@ export function Footer() {
             </li>
             <li>
               <Link to="/artists">Artist listing</Link>
-            </li>
-            <li>
-              <Link to="#">Shop</Link>
             </li>
             <li>
               <a
@@ -102,7 +102,7 @@ export function Footer() {
         </Section>
       </Links>
 
-      <Social>
+      {/* <Social>
         <Section>
           <ul>
             <li>
@@ -116,7 +116,7 @@ export function Footer() {
             </li>
           </ul>
         </Section>
-      </Social>
+      </Social> */}
 
       <Scroll>
         <Section>
