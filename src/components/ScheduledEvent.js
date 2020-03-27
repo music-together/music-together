@@ -7,17 +7,27 @@ const ScheduledEventContainer = styled.div`
   width: 100%;
   display: flex;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  padding-bottom: 24px;
-  margin-bottom: 24px;
+  padding-bottom: var(--spacing--tight);
+  margin-bottom: var(--spacing--tight);
+  align-items: center;
 `
 
 const ArtistThumbnailContainer = styled.div`
-  margin-right: 12px;
-  max-width: 106px;
+  flex-shrink: 0;
+  margin-right: var(--spacing--tight);
+  height: 100px;
+  width: 100px;
 
   @media (max-width: 600px) {
-    max-width: 42px;
+    width: 50px;
+    height: 50px;
   }
+`
+
+const Thumbnail = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `
 
 const ArtistContainer = styled.div`
@@ -71,7 +81,7 @@ export const ScheduledEvent = ({ event, artists }) => {
     <ScheduledEventContainer>
       {artistImageUrl && (
         <ArtistThumbnailContainer>
-          <img alt={artistNames} src={artistImageUrl} />
+          <Thumbnail alt={artistNames} src={artistImageUrl} />
         </ArtistThumbnailContainer>
       )}
       <ArtistContainer>

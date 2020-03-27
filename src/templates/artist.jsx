@@ -23,7 +23,12 @@ export default ({ data }) => {
 
         {(artist.Press_Image || []).map((pressImage) => (
           <div key={pressImage.id}>
-            <img alt={artist.Name} src={pressImage.thumbnails.large.url} />
+            <img
+              alt={artist.Name}
+              height={pressImage.thumbnails.large.height}
+              width={pressImage.thumbnails.large.width}
+              src={pressImage.thumbnails.large.url}
+            />
           </div>
         ))}
 
@@ -108,6 +113,8 @@ export const sceneQuery = graphql`
           thumbnails {
             large {
               url
+              height
+              width
             }
           }
         }
