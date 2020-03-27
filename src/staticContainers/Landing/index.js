@@ -38,7 +38,7 @@ function LandingPage() {
           </Text>
         </TextWrapper>
 
-        <Action>Apply to perform</Action>
+        <Action to="/artist-apply">Apply to perform</Action>
         <Action>Donate</Action>
       </HeroContainer>
       <Schedule />
