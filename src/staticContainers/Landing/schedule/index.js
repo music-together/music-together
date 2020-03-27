@@ -46,8 +46,6 @@ export default () => {
               Artist
               Show_time
               Notes
-              Stream_Name
-              Stream_Link
             }
           }
         }
@@ -93,8 +91,6 @@ export default () => {
               Location
               Past_Gigs
               Notes
-              Stream_Name
-              Stream_Link
             }
           }
         }
@@ -112,7 +108,7 @@ export default () => {
     <NarrowContainer>
       <EventList events={schedule} artists={artists} />
 
-      <LoadMoreButton onClick={() => console.error('load more!!!')}>Load more</LoadMoreButton>
+      <LoadMoreButton onClick={() => console.error('load more!!!')}>View all</LoadMoreButton>
       <BottomSpacer />
     </NarrowContainer>
   )
