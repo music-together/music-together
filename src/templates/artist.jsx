@@ -8,6 +8,7 @@ import SEO from "components/common/SEO"
 
 export default ({ data }) => {
   const artist = data.artist.data
+  const genres = artist.Genre || []
   const schedule = data.schedule.edges
     .map((edge) => edge.node)
     .filter((node) => !!node.data.Show_time)
@@ -19,7 +20,7 @@ export default ({ data }) => {
       {/* TODO: All Artists link */}
       <NarrowContainer>
         <Heading size="xlarge">{artist.Name}</Heading>
-        <Text subdued>{artist.Genre.join(", ")}</Text>
+        <Text subdued>{genres.join(", ")}</Text>
 
         {(artist.Press_Image || []).map((pressImage) => (
           <div key={pressImage.id}>
