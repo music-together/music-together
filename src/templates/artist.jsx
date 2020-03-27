@@ -1,10 +1,48 @@
 import React from "react"
+import styled from "styled-components"
 import { graphql } from "gatsby"
+import { format } from "date-fns"
 import { Button, Heading, Text } from "components"
 import Layout from "components/common/Layout"
 import { NarrowContainer } from "components/NarrowContainer"
 import { SocialLink } from "components/SocialLink"
 import SEO from "components/common/SEO"
+
+const Event = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--spacing--tight) 0;
+`
+
+const EventsWrapper = styled.div`
+  margin: var(--spacing--base) 0;
+
+  & > * {
+    margin-top: var(--spacing--base);
+  }
+`
+
+const EventDetail = styled.div`
+  margin-right: var(--spacing--xtight);
+`
+
+const ArtistInfo = styled.div`
+  margin-bottom: var(--spacing--base);
+`
+
+const Time = styled.time`
+  font-size: var(--font-size--xlarge);
+
+  @media screen and (max-width: 500px) {
+    font-size: var(--font-size--medium);
+  }
+`
+
+const BioWrapper = styled.div`
+  border-top: 3px solid rgba(255, 255, 255, 0.8);
+  padding: var(--spacing--base) 0;
+`
 
 export default ({ data }) => {
   const artist = data.artist.data
@@ -17,10 +55,11 @@ export default ({ data }) => {
     <Layout>
       <SEO title={artist.Name} description={artist.Bio} />
 
-      {/* TODO: All Artists link */}
       <NarrowContainer>
-        <Heading size="xlarge">{artist.Name}</Heading>
-        <Text subdued>{genres.join(", ")}</Text>
+        <ArtistInfo>
+          <Heading size="xlarge">{artist.Name}</Heading>
+          <Text subdued>{genres.join(", ")}</Text>
+        </ArtistInfo>
 
         {(artist.Press_Image || []).map((pressImage) => (
           <div key={pressImage.id}>
@@ -33,28 +72,41 @@ export default ({ data }) => {
           </div>
         ))}
 
-        {schedule.map((node) => (
-          <div key={node.id}>
-            <h3>{new Date(node.data.Show_time).toLocaleString()}</h3>
-            <div>
-              <Button>TODO: Add to Calendar</Button>
+        <EventsWrapper>
+          {schedule.map((node) => (
+            <div key={node.id}>
+              <Heading>
+                {new Date(node.data.Show_time).toLocaleDateString(["en-CA"], {
+                  month: "short",
+                  day: "2-digit",
+                  year: "numeric",
+                })}
+              </Heading>
+              <Event>
+                <EventDetail>
+                  <Time>{format(new Date(node.data.Show_time), "K a")}</Time>
+                </EventDetail>
+                {node.data.Stream_link && (
+                  <div>
+                    <a
+                      href={node.data.Stream_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button>View stream</Button>
+                    </a>
+                  </div>
+                )}
+              </Event>
             </div>
-          </div>
-        ))}
+          ))}
+        </EventsWrapper>
 
-        <div>{artist.Bio}</div>
-
-        <div>
-          <Button>TODO: Donate on Patreon</Button>
-        </div>
-
-        <div>
-          <Button>TODO: Donate via Paypal</Button>
-        </div>
-
-        <div>
-          <Button>TODO: Official Shop</Button>
-        </div>
+        {artist.Bio && (
+          <BioWrapper>
+            <Text>{artist.Bio}</Text>
+          </BioWrapper>
+        )}
 
         <center>
           <SocialLink link={artist.Facebook} />
