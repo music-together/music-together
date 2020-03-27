@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { Button } from "components"
 import Section from "components/common/Section"
+import {DonateButton} from "components/DonateButton"
 
 const FooterWrapper = styled.footer`
   display: grid;
@@ -66,7 +67,7 @@ export function Footer() {
         <Section>
           <SubduedHeading>Made by artists, for artists.</SubduedHeading>
           <ButtonWrapper>
-            <Button>Donate</Button>
+            <DonateButton />
           </ButtonWrapper>
         </Section>
       </Primary>

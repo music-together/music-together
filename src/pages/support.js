@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
 import { Heading, Text, NarrowContainer, Button } from "components"
+import {DonateButton} from "components/DonateButton"
 
 const Blurb = styled.div`
   margin: var(--spacing--tight) 0;
@@ -39,9 +40,7 @@ export default () => (
           straight into the pockets of local musicians.
         </Text>
 
-        <a>
-          <Button>Support the artists</Button>
-        </a>
+        <DonateButton />
 
         <center>
           <Text subdued>Donations are non tax-deductable</Text>
