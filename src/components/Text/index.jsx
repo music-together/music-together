@@ -9,6 +9,7 @@ const P = styled.p`
       xlarge: "var(--font-size--xlarge)",
     }[props.size])};
   opacity: ${(props) => (props.subdued ? "0.8" : "1")};
+  margin: 0;
 `
 
 export function Text({ size = "medium", subdued = false, children }) {
