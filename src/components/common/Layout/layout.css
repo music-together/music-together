@@ -101,6 +101,7 @@ html {
     "Segoe UI Symbol";
   color: white;
   background: black;
+  -webkit-font-smoothing: antialiased;
 }
 
 ul {

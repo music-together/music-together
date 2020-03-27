@@ -10,6 +10,7 @@ const FooterWrapper = styled.footer`
   width: 100%;
   max-width: 1200px;
   margin: var(--spacing--base) auto var(--spacing--xloose);
+  padding: 0 var(--spacing--tight);
 
   @media screen and (max-width: 800px) {
     grid-template-areas: "primary" "links" "social" "scroll";
@@ -77,7 +78,7 @@ export function Footer() {
               <Link to="/artist-apply">Apply to perform</Link>
             </li>
             <li>
-              <Link to="#">Sponsors</Link>
+              <Link to="/sponsors">Sponsors</Link>
             </li>
             <li>
               <Link to="#">Artist resources</Link>

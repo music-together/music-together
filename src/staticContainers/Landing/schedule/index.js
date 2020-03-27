@@ -1,8 +1,8 @@
 import React from "react"
-import {useStaticQuery, graphql} from "gatsby"
-import {NarrowContainer} from 'components/NarrowContainer'
+import { useStaticQuery, graphql } from "gatsby"
+import { NarrowContainer } from "components/NarrowContainer"
 import styled from "styled-components"
-import {EventList} from "components/EventList"
+import { EventList } from "components/EventList"
 
 const LoadMoreButton = styled.button`
   height: 54px;
@@ -35,9 +35,7 @@ const BottomSpacer = styled.div`
 export default () => {
   const { scheduleResult, artistsResult } = useStaticQuery(graphql`
     query {
-      scheduleResult: allAirtable(
-        filter: { table: { eq: "Schedule" } }
-      ) {
+      scheduleResult: allAirtable(filter: { table: { eq: "Schedule" } }) {
         edges {
           node {
             recordId
@@ -51,9 +49,7 @@ export default () => {
         }
       }
 
-      artistsResult: allAirtable(
-        filter: { table: { eq: "Artists" } }
-      ) {
+      artistsResult: allAirtable(filter: { table: { eq: "Artists" } }) {
         edges {
           node {
             recordId
@@ -98,11 +94,11 @@ export default () => {
     }
   `)
 
-  const schedule = scheduleResult.edges.map(edge => edge.node)
+  const schedule = scheduleResult.edges.map((edge) => edge.node)
   const artists = artistsResult.edges.reduce((acc, curr) => {
-    acc[curr.node.recordId] = curr.node;
-    return acc;
-  }, {});
+    acc[curr.node.recordId] = curr.node
+    return acc
+  }, {})
 
   return (
     <NarrowContainer>
@@ -113,4 +109,3 @@ export default () => {
     </NarrowContainer>
   )
 }
-
