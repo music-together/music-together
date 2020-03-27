@@ -55,6 +55,7 @@ export default () => (
 
       <Section noDivider>
         <Heading>Matching Partner</Heading>
+
         <a href="http://www.ontariocreates.ca/">
           <Text size="xlarge">Ontario Live</Text>
         </a>
