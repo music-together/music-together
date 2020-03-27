@@ -12,7 +12,9 @@ export default ({ data }) => {
       <SEO title="Arists" />
 
       <NarrowContainer>
-        <Heading>Artists</Heading>
+        <Heading size="large" bold>
+          Artists
+        </Heading>
         {data.artists.edges.map(({ node }) => (
           <ScheduledEvent artists={[node]} />
         ))}

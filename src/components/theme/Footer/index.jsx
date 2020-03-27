@@ -33,6 +33,7 @@ const Section = styled.div`
 
 const SubduedHeading = styled.h3`
   color: var(--text-color--subdued);
+  font-weight: 400;
 `
 
 const ButtonWrapper = styled.div`

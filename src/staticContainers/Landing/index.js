@@ -28,7 +28,7 @@ function LandingPage() {
   return (
     <>
       <HeroContainer>
-        <Heading size="large" bold>
+        <Heading size="xlarge" bold>
           Support Ontario artists without leaving home
         </Heading>
         <TextWrapper>
