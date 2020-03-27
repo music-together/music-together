@@ -3,13 +3,56 @@ import styled from "styled-components"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
 import Section from "components/common/Section"
-import { Text, NarrowContainer, Heading } from "components"
+import { Text, NarrowContainer, Heading, Button } from "components"
+
+const Blurb = styled.div`
+  margin: var(--spacing--tight) 0;
+
+  ul {
+    margin-top: var(--spacing--tight);
+    list-style-type: circle;
+  }
+
+  p {
+    margin-bottom: var(--spacing--tight);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+`
 
 export default () => (
   <Layout>
     <SEO title="Sponsors" />
-
     <NarrowContainer>
+      <Blurb>
+        <Text>
+          MusicTogether supports working Ontario musicians during the COVID-19
+          crisis with direct funding, new opportunities for fan discovery, and
+          eCommerce tools. $300,000 has been committed thanks to the generosity
+          of the music community funders listed below and matching funds from
+          OntarioLive.
+        </Text>
+        <Text>
+          MusicTogether is run by volunteers. 100% of our funds go straight to
+          working musicians affected by the COVID-19 crisis.
+        </Text>
+        <Text>
+          MusicTogether.ca was founded by Raja Khanna, Jeffrey Remedios, Oliver
+          Johnson, and Daniel Debow (partners in the{" "}
+          <a
+            href="https://www.therootdownstudio.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Root Down Studio
+          </a>
+          ).
+        </Text>
+        <Text>Financial support for MusicTogether.ca comes from:</Text>
+      </Blurb>
+
       <Section noDivider>
         <Heading>Matching Partner</Heading>
         <a href="http://www.ontariocreates.ca/">
@@ -62,6 +105,34 @@ export default () => (
           <Personally />
         </Text>
       </Section>
+
+      <Blurb>
+        <Text>and you, the fans! Click here to donate now.</Text>
+      </Blurb>
+
+      <Button>Support the artists</Button>
+
+      <Blurb>
+        <Text>
+          MusicTogether would also like to acknowledge:
+          <ul>
+            <li>
+              The volunteers at Shopify, without whom this website would not
+              exist.
+            </li>
+            <li>
+              Arts & Crafts for being the backbone of this entire operation. A
+              HUGE thank you to the Arts & Crafts team for managing the
+              marketing, the money and so much more.
+            </li>
+            <li>
+              All the volunteers who have contributed to this project, including
+              all of you for watching, spreading the word and getting people to
+              donate to help keep musicians at work!
+            </li>
+          </ul>
+        </Text>
+      </Blurb>
     </NarrowContainer>
   </Layout>
 )
