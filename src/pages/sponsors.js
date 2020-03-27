@@ -114,25 +114,23 @@ export default () => (
       <Button>Support the artists</Button>
 
       <Blurb>
-        <Text>
-          MusicTogether would also like to acknowledge:
-          <ul>
-            <li>
-              The volunteers at Shopify, without whom this website would not
-              exist.
-            </li>
-            <li>
-              Arts & Crafts for being the backbone of this entire operation. A
-              HUGE thank you to the Arts & Crafts team for managing the
-              marketing, the money and so much more.
-            </li>
-            <li>
-              All the volunteers who have contributed to this project, including
-              all of you for watching, spreading the word and getting people to
-              donate to help keep musicians at work!
-            </li>
-          </ul>
-        </Text>
+        <Text>MusicTogether would also like to acknowledge:</Text>
+        <ul>
+          <li>
+            The volunteers at Shopify, without whom this website would not
+            exist.
+          </li>
+          <li>
+            Arts & Crafts for being the backbone of this entire operation. A
+            HUGE thank you to the Arts & Crafts team for managing the marketing,
+            the money and so much more.
+          </li>
+          <li>
+            All the volunteers who have contributed to this project, including
+            all of you for watching, spreading the word and getting people to
+            donate to help keep musicians at work!
+          </li>
+        </ul>
       </Blurb>
     </NarrowContainer>
   </Layout>
