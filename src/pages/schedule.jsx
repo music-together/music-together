@@ -1,37 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { NarrowContainer } from "components/NarrowContainer"
-import styled from "styled-components"
 import { EventList } from "components/EventList"
-import groupEventsByDay from "utilities/groupEventsByDay"
-
-const ViewAllLink = styled(Link)`
-  height: 54px;
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  background: none;
-  padding: 0;
-  cursor: pointer;
-  outline: inherit;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 18px;
-
-  text-align: center;
-`
-
-const BottomSpacer = styled.div`
-  height: 100px;
-  width: 100%;
-`
+import Layout from "components/common/Layout"
 
 export default () => {
   const { scheduleResult, artistsResult } = useStaticQuery(graphql`
@@ -103,15 +74,11 @@ export default () => {
     return acc
   }, {})
 
-  // Only display events that happen on "next" day relative from cutoff
-  const nextDaysEvents = groupEventsByDay(events).values().next().value;
-
   return (
-    <NarrowContainer>
-      <EventList events={nextDaysEvents} artists={artists} />
-
-      <ViewAllLink to="/schedule">View all</ViewAllLink>
-      <BottomSpacer />
-    </NarrowContainer>
+    <Layout>
+      <NarrowContainer>
+        <EventList events={events} artists={artists} />
+      </NarrowContainer>
+    </Layout>
   )
 }
