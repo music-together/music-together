@@ -35,15 +35,17 @@ const BottomSpacer = styled.div`
 export default () => {
   const { scheduleResult, artistsResult } = useStaticQuery(graphql`
     query {
-      scheduleResult: allAirtable(filter: { table: { eq: "Schedule" } }) {
+      scheduleResult: allAirtable(
+        filter: { table: { eq: "Schedule" } }
+        sort: {fields: data___Show_time, order: ASC}
+      ) {
         edges {
           node {
+            id
             recordId
             data {
-              Order
               Artist
               Show_time
-              Notes
             }
           }
         }

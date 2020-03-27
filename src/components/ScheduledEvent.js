@@ -49,16 +49,6 @@ const ArtistLink = styled(Link)`
   margin-right: 8px;
 `
 
-const defaultArtists = ["No one"]
-
-const formatNames = (artists) => {
-  let artistNames = artists.map((artist) => artist.data.Name)
-  if (artistNames.length === 0) {
-    artistNames = defaultArtists
-  }
-  return artistNames.join(" + ")
-}
-
 const getArtistImageUrl = (artists) => {
   if ((artists[0].data.Press_Image || []).length === 0) {
     return null
@@ -67,7 +57,11 @@ const getArtistImageUrl = (artists) => {
 }
 
 export const ScheduledEvent = ({ event, artists }) => {
-  const artistNames = formatNames(artists)
+  if ((artists || []).length === 0) {
+    return null;
+  }
+
+  const artistImageAlt = artists[0].data.Name;
   const artistImageUrl = getArtistImageUrl(artists)
   const genres = artists
     .filter(artist => !!artist.data.Genre)
@@ -79,7 +73,7 @@ export const ScheduledEvent = ({ event, artists }) => {
     <ScheduledEventContainer>
       {artistImageUrl && (
         <ArtistThumbnailContainer>
-          <Thumbnail alt={artistNames} src={artistImageUrl} />
+          <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
         </ArtistThumbnailContainer>
       )}
       <ArtistContainer>
