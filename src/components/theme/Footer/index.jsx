@@ -81,7 +81,7 @@ export function Footer() {
               <Link to="/sponsors">Sponsors</Link>
             </li>
             <li>
-              <Link to="#">Artist resources</Link>
+              <Link to="/resources">Artist resources</Link>
             </li>
             <li>
               <Link to="/artists">Artist listing</Link>
@@ -90,7 +90,13 @@ export function Footer() {
               <Link to="#">Shop</Link>
             </li>
             <li>
-              <a href="mailto:info@musictogether.ca" target="_blank" rel="noopener noreferrer">Contact</a>
+              <a
+                href="mailto:info@musictogether.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact
+              </a>
             </li>
           </ul>
         </Section>

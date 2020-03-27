@@ -16,19 +16,26 @@ const XLarge = styled.h2`
 const Medium = styled.h3`
   font-size: var(--font-size--medium);
   font-weight: 700;
+  margin-bottom: ${(props) => (props.padding ? "var(--spacing--tight)" : "0")};
+  text-transform: uppercase;
 `
 
 const Small = styled.h4`
   font-size: var(--font-size--default);
 `
 
-export function Heading({ bold = false, size = "medium", children }) {
+export function Heading({
+  padding = false,
+  bold = false,
+  size = "medium",
+  children,
+}) {
   switch (size) {
     case "small": {
       return <Small>{children}</Small>
     }
     case "medium": {
-      return <Medium>{children}</Medium>
+      return <Medium padding={padding}>{children}</Medium>
     }
     case "large": {
       return <Large bold={bold}>{children}</Large>
