@@ -2,6 +2,7 @@ import React, { useCallback } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Button } from "components"
+import Section from "components/common/Section"
 
 const FooterWrapper = styled.footer`
   display: grid;
@@ -12,22 +13,6 @@ const FooterWrapper = styled.footer`
 
   @media screen and (max-width: 800px) {
     grid-template-areas: "primary" "links" "social" "scroll";
-  }
-`
-
-const Section = styled.div`
-  position: relative;
-  padding-top: var(--spacing--base);
-  margin-top: var(--spacing--base);
-  font-size: var(--font-size--medium);
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: var(--spacing--base);
-    border-bottom: 1px solid white;
   }
 `
 
