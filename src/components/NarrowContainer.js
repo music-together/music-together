@@ -1,10 +1,8 @@
 import styled from "styled-components"
 
 export const NarrowContainer = styled.div`
-  max-width: 686px;
+  max-width: 700px;
   background-color: transparent;
   margin: 0 auto;
-  @media (max-width: 600px) {
-    margin: 0 20px;
-  }
+  padding: 0 var(--spacing--tight);
 `

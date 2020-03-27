@@ -37,9 +37,6 @@ export default ({ data }) => {
           <div key={node.id}>
             <h3>{new Date(node.data.Show_time).toLocaleString()}</h3>
             <div>
-              <a href={node.data.Stream_Link}>{node.data.Stream_Name}</a>
-            </div>
-            <div>
               <Button>TODO: Add to Calendar</Button>
             </div>
           </div>
