@@ -2,7 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { Text } from "components"
-import { format } from 'date-fns'
+import { format } from "date-fns"
+import { WatchNowLink } from "./WatchNowLink"
+import { hasShowStarted } from "../utilities/hasShowStarted"
 
 const ScheduledEventContainer = styled.div`
   width: 100%;
@@ -40,8 +42,12 @@ const ArtistContainer = styled.div`
 const TimeContainer = styled.div`
   height: 100%;
   margin-left: auto;
-  width: 100px;
+  min-width: 100px;
   text-align: right;
+`
+
+const TimeText = styled(Text)`
+  min-width: 100px;
 `
 
 const ArtistLink = styled(Link)`
@@ -49,25 +55,34 @@ const ArtistLink = styled(Link)`
   margin-right: 8px;
 `
 
-const getArtistImageUrl = (artists) => {
-  if ((artists[0].data.Press_Image || []).length === 0) {
+const getArtistImageUrl = (artist) => {
+  if ((artist.data.Press_Image || []).length === 0) {
     return null
   }
-  return artists[0].data.Press_Image[0].thumbnails.large.url
+  return artist.data.Press_Image[0].thumbnails.large.url
 }
 
 export const ScheduledEvent = ({ event, artists }) => {
   if ((artists || []).length === 0) {
-    return null;
+    return null
   }
 
-  const artistImageAlt = artists[0].data.Name;
-  const artistImageUrl = getArtistImageUrl(artists)
+  // artist
+  const artist = artists[0]
+  const artistImageAlt = artist.data.Name
+  const artistImageUrl = getArtistImageUrl(artist)
+  const watchNowUrl = artist.data.Stream_Link
   const genres = artists
-    .filter(artist => !!artist.data.Genre)
+    .filter((artist) => !!artist.data.Genre)
     .reduce((acc, artist) => [...acc, ...artist.data.Genre], [])
     .join(", ")
-  const formattedTime = event ? format(new Date(event.data.Show_time), 'K a') : null
+
+  // event
+  const showTime = event ? new Date(event.data.Show_time) : null
+  const isShowTime = event ? hasShowStarted(showTime) : null
+  const formattedTime = event
+    ? format(showTime, "K a")
+    : null
 
   return (
     <ScheduledEventContainer>
@@ -85,9 +100,12 @@ export const ScheduledEvent = ({ event, artists }) => {
         <Text subdued>{genres}</Text>
       </ArtistContainer>
 
-      {formattedTime && (
+      {isShowTime && (
+        <WatchNowLink href={watchNowUrl} showTime={showTime} />
+      )}
+      {!isShowTime && formattedTime && (
         <TimeContainer>
-          <Text>{formattedTime}</Text>
+          <TimeText>{formattedTime}</TimeText>
         </TimeContainer>
       )}
     </ScheduledEventContainer>

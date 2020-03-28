@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
 import Section from "components/common/Section"
-import { Text, NarrowContainer, Heading, Button } from "components"
+import { Text, NarrowContainer, Heading, DonateButton } from "components"
 
 const Blurb = styled.div`
   margin: var(--spacing--tight) 0;
@@ -111,7 +111,7 @@ export default () => (
         <Text>and you, the fans! Click here to donate now.</Text>
       </Blurb>
 
-      <Button>Support the artists</Button>
+      <DonateButton>Donate</DonateButton>
 
       <Blurb>
         <Text>MusicTogether would also like to acknowledge:</Text>

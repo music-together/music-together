@@ -2,31 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { NarrowContainer } from "components/NarrowContainer"
 import styled from "styled-components"
-import { EventList } from "components/EventList"
+import { EventList, Button } from "components"
 import groupEventsByDay from "utilities/groupEventsByDay"
-
-const ViewAllLink = styled(Link)`
-  height: 54px;
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  background: none;
-  padding: 0;
-  cursor: pointer;
-  outline: inherit;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 18px;
-
-  text-align: center;
-`
 
 const BottomSpacer = styled.div`
   height: 100px;
@@ -75,6 +52,7 @@ export default () => {
                   }
                 }
               }
+              Stream_Link
 
               # Social
               Soundcloud
@@ -110,7 +88,9 @@ export default () => {
     <NarrowContainer>
       <EventList events={nextDaysEvents} artists={artists} />
 
-      <ViewAllLink to="/schedule">View all</ViewAllLink>
+      <Link to="/schedule">
+        <Button>View all</Button>
+      </Link>
       <BottomSpacer />
     </NarrowContainer>
   )

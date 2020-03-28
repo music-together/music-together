@@ -1,13 +1,27 @@
 import styled from "styled-components"
 
 export const Button = styled.button`
-  border: 2px solid;
-  padding: 20px 40px;
-  background: transparent;
+  height: 54px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  cursor: pointer;
 
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+
+  text-align: center;
+  
   &:hover {
     background: white;
     color: black;
