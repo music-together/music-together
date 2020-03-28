@@ -2,11 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import { format } from "date-fns"
-import { Button, Heading, Text } from "components"
+import {  Heading, Text } from "components"
 import Layout from "components/common/Layout"
 import { NarrowContainer } from "components/NarrowContainer"
 import { SocialLink } from "components/SocialLink"
 import SEO from "components/common/SEO"
+import { WatchNowLink } from "../components"
 
 const Event = styled.div`
   display: flex;
@@ -73,33 +74,30 @@ export default ({ data }) => {
         ))}
 
         <EventsWrapper>
-          {schedule.map((node) => (
-            <div key={node.id}>
-              <Heading>
-                {new Date(node.data.Show_time).toLocaleDateString(["en-CA"], {
-                  month: "short",
-                  day: "2-digit",
-                  year: "numeric",
-                })}
-              </Heading>
-              <Event>
-                <EventDetail>
-                  <Time>{format(new Date(node.data.Show_time), "K a")}</Time>
-                </EventDetail>
-                {node.data.Stream_link && (
-                  <div>
-                    <a
-                      href={node.data.Stream_link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button>View stream</Button>
-                    </a>
-                  </div>
-                )}
-              </Event>
-            </div>
-          ))}
+          {schedule.map((node) => {
+            const showTime = new Date(node.data.Show_time)
+
+            return (
+              <div key={node.id}>
+                <Heading>
+                  {new Date(node.data.Show_time).toLocaleDateString(["en-CA"], {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}
+                </Heading>
+                <Event>
+                  <EventDetail>
+                    <Time>{format(showTime, "K a")}</Time>
+                  </EventDetail>
+                  <WatchNowLink
+                    href={artist.Stream_Link}
+                    showTime={showTime}
+                  />
+                </Event>
+              </div>
+            )
+          })}
         </EventsWrapper>
 
         {artist.Bio && (
@@ -123,7 +121,9 @@ export default ({ data }) => {
 export const sceneQuery = graphql`
   query($recordId: String!) {
     schedule: allAirtable(
-      filter: { table: { eq: "Schedule" }, data: { Artist: { eq: $recordId } } }
+      filter: { table: { eq: "Schedule" },
+      data: { Artist: { eq: $recordId } } }
+      sort: { fields: data___Show_time, order: ASC },
     ) {
       edges {
         node {
@@ -166,6 +166,7 @@ export const sceneQuery = graphql`
         }
         Representation
         Representation_Name
+        Stream_Link
         Soundcloud
         Spotify
         Time_slot

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import { FaSpotify, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaApple } from 'react-icons/fa';
+import { ExternalLink } from "./ExternalLink"
 
 const IconMapper = {
   'twitter': /twitter/,
@@ -47,15 +48,15 @@ const UntyledSocialIcon = ({type}) => {
   }
 }
 
-const IconLink = styled.a`
+const IconContainer = styled.div`
   display: inline-block;
   margin: 1em;
 `
 
-const addHttpsIfNeeded = (link) => (link.indexOf("http") !== -1) ? link : `https://${link}`
-
-const SocialIcon = ({link, type}) => (
-  <IconLink href={addHttpsIfNeeded(link)} target="_blank" rel="noopener">
-    <UntyledSocialIcon type={type} />
-  </IconLink>
+const SocialIcon = ({ link, type }) => (
+  <IconContainer>
+    <ExternalLink href={link}>
+      <UntyledSocialIcon type={type} />
+    </ExternalLink>
+  </IconContainer>
 )

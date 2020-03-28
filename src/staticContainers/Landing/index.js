@@ -43,7 +43,7 @@ function LandingPage() {
         </TextWrapper>
 
         <Action to="/artist-apply">Apply to perform</Action>
-        <Action>Donate</Action>
+        <Action to="/support">Support the artists</Action>
       </HeroContainer>
       <Schedule />
     </>
