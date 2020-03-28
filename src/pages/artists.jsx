@@ -26,7 +26,7 @@ export default ({ data }) => {
 
 export const sceneQuery = graphql`
   query {
-    artists: allAirtable(filter: { table: { eq: "Artists" } }) {
+    artists: allAirtable(sort: {fields: data___Name, order: ASC}, filter: { table: { eq: "Artists" } }) {
       edges {
         node {
           id
