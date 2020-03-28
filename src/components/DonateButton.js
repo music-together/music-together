@@ -1,22 +1,11 @@
 import React from 'react'
-import {Button} from './Button'
+import {ButtonLink} from './Button'
 
-export const DonateButton = () => {
+const paypayURL = 'https://www.paypal.com/donate/?token=A3suGmB-F6r2BDJgJxvevO9dFQ74qROoTa9ttAPgLyC-svBaZ45LsYOcO1wznWwL-sIz1G&country.x=US&locale.x=US'
+
+export const DonateButton = ({text - 'Donate'}) => {
   return (
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="cmd" value="_s-xclick" />
-      <input type="hidden" name="hosted_button_id" value="M2CGBCDBRJVGJ" />
-      <Button type="submit">Donate</Button>
-      {/* <input */}
-      {/*   type="image" */}
-      {/*   src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" */}
-      {/*   border="0" */}
-      {/*   name="submit" */}
-      {/*   title="PayPal - The safer, easier way to pay online!" */}
-      {/*   alt="Donate with PayPal button" */}
-      {/* /> */}
-      {/* <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" /> */}
-    </form>
+    <ButtonLink href={paypayURL} target="_blank">{text}</ButtonLink>
   )
 }
 

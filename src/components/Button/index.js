@@ -21,9 +21,10 @@ export const Button = styled.button`
   line-height: 18px;
 
   text-align: center;
-  
+
   &:hover {
     background: white;
     color: black;
   }
 `
+export const ButtonLink = Button.withComponent('a')
