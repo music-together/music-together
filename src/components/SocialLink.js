@@ -52,9 +52,10 @@ const IconLink = styled.a`
   margin: 1em;
 `
 
+const addHttpsIfNeeded = (link) => (link.indexOf("http") !== -1) ? link : `https://${link}`
+
 const SocialIcon = ({link, type}) => (
-  <IconLink href={link} target="_blank" rel="noopener">
+  <IconLink href={addHttpsIfNeeded(link)} target="_blank" rel="noopener">
     <UntyledSocialIcon type={type} />
   </IconLink>
 )
-
