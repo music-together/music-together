@@ -1,7 +1,6 @@
 import React, { useCallback } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Button } from "components"
 import Section from "components/common/Section"
 import {DonateButton} from "components/DonateButton"
 
@@ -46,10 +45,6 @@ const Primary = styled.div`
 
 const Links = styled.div`
   grid-area: links;
-`
-
-const Social = styled.div`
-  grid-area: social;
 `
 
 const Scroll = styled.div`

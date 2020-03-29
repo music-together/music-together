@@ -27,4 +27,3 @@ export const Button = styled.button`
     color: black;
   }
 `
-export const ButtonLink = Button.withComponent('a')

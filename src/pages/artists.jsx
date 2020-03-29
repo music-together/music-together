@@ -17,7 +17,7 @@ export default ({ data }) => {
         </Heading>
         {data.artists.edges.map(({ node }) => {
           if (!node || !node.data.Name) return null;
-          return <ScheduledEvent artists={[node]} />
+          return <ScheduledEvent key={node.recordId} artists={[node]} />
         })}
       </NarrowContainer>
     </Layout>

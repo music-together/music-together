@@ -1,11 +1,13 @@
 import React from 'react'
-import {ButtonLink} from './Button'
+import { Button } from "./Button"
+import { ExternalLink } from "./ExternalLink"
 
-const paypayURL = 'https://www.paypal.com/donate/?token=A3suGmB-F6r2BDJgJxvevO9dFQ74qROoTa9ttAPgLyC-svBaZ45LsYOcO1wznWwL-sIz1G&country.x=US&locale.x=US'
+const paypalURL = 'https://www.paypal.com/donate/?token=A3suGmB-F6r2BDJgJxvevO9dFQ74qROoTa9ttAPgLyC-svBaZ45LsYOcO1wznWwL-sIz1G&country.x=US&locale.x=US'
 
-export const DonateButton = ({text - 'Donate'}) => {
+export const DonateButton = ({text = 'Donate'}) => {
   return (
-    <ButtonLink href={paypayURL} target="_blank">{text}</ButtonLink>
+    <ExternalLink href={paypalURL}>
+      <Button>{text}</Button>
+    </ExternalLink>
   )
 }
-

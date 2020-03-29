@@ -93,7 +93,7 @@ export const ScheduledEvent = ({ event, artists }) => {
       )}
       <ArtistContainer>
         {artists.map((artist) => (
-          <ArtistLink to={`/artist/${artist.recordId}`}>
+          <ArtistLink key={artist.recordId} to={`/artist/${artist.recordId}`}>
             {artist.data.Name}
           </ArtistLink>
         ))}

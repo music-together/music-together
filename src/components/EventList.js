@@ -14,7 +14,7 @@ export const EventList = ({ events, artists }) => {
         const eventDate = parse(eventDateKey, DateKeyFormat, new Date());
 
         return (
-          <>
+          <div key={eventDateKey}>
             <Heading size="large" bold>
               {format(eventDate, 'eeee MMMM d')}
             </Heading>
@@ -35,7 +35,7 @@ export const EventList = ({ events, artists }) => {
                 />
               )
             })}
-          </>
+          </div>
         )
       })
       }

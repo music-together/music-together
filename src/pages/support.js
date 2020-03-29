@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
-import { Heading, Text, NarrowContainer, Button } from "components"
+import { Heading, Text, NarrowContainer } from "components"
 import {DonateButton} from "components/DonateButton"
 
 const Blurb = styled.div`
