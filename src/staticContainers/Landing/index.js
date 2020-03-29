@@ -24,7 +24,7 @@ const Action = styled(Link)`
 `
 
 const TextWrapper = styled.div`
-  max-width: 450px;
+  max-width: 500px;
   margin: var(--spacing--tight) auto var(--spacing--base);
 `
 
@@ -37,8 +37,7 @@ function LandingPage() {
         </Heading>
         <TextWrapper>
           <Text>
-            Enjoy a night of live music and give back to your local music
-            community
+            A living room concert series to pay artists in need
           </Text>
         </TextWrapper>
 
