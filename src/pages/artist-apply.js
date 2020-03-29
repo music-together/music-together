@@ -3,7 +3,7 @@ import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
 import Section from "components/common/Section"
 import SectionTitle from "components/common/Section/title.jsx"
-import { Button, NarrowContainer } from "components"
+import { Button, NarrowContainer, ExternalLink, InlineLinkContainer } from "components"
 
 export default () => (
   <Layout>
@@ -31,7 +31,9 @@ export default () => (
       <Section>
         <SectionTitle>Apply</SectionTitle>
         <p>
-          Eligible musicians in Ontario can apply to perform through
+          <ExternalLink href="https://musictogether.ca/static/eligibility-b54596b8dc096c14940a2b9b6af56b14.pdf">
+            <InlineLinkContainer>Eligible musicians</InlineLinkContainer>
+          </ExternalLink> in Ontario can apply to perform through
           MusicTogether, and will be evaluated on a first-come, first-serve
           basis.
         </p>
@@ -40,28 +42,14 @@ export default () => (
           music during this hardship. There's a few ground rules to cover first:
         </p>
         <ul>
-          <li>* You must be a Canadian citizen or permanent resident</li>
-          <li>
-            * You must be a permanent resident of Ontario for one year prior
-            (April 1, 2019)
-          </li>
-          <li>* You must be living in Ontario</li>
-          <li>* You must be 18 years or older</li>
-          <li>
-            * You must meet the tech-requirements of being able to livestream
-            your performance on Instagram or Facebook
-          </li>
-          <li>
-            * You may not use the platform to promote or condone hate or
-            violence against people based on race, ethnicity, color, national
-            origin, religion, age, gender, sexual orientation, disability,
-            medical condition, veteran status or other forms of discriminatory
-            intolerance. You may not use the platform to promote or support
-            organizations, platforms or people that: (i) promote or condone such
-            hate; or (ii) threaten or condone violence to further a cause.
+          <li>* You must be a working musician making your living through music</li>
+          <li>* You gotta be local to Ontario</li>
+          <li>* You have to be able to film your own livestream
           </li>
         </ul>
-        <p>Let's jam!</p>
+        <p><ExternalLink href="https://airtable.com/shraDwLHxfGjP0fXl">
+          <InlineLinkContainer>Learn more here</InlineLinkContainer>
+        </ExternalLink> and let's jam!</p>
       </Section>
       <Section>
         <SectionTitle>Play</SectionTitle>
@@ -84,6 +72,11 @@ export default () => (
           people talking about your show. The more people talk about it, the
           more opportunities for people to discover your music.
         </p>
+        <p>
+          <ExternalLink href="https://airtable.com/shraDwLHxfGjP0fXl">
+            <InlineLinkContainer>Learn more here</InlineLinkContainer>
+          </ExternalLink>
+        </p>
       </Section>
       <Section>
         <SectionTitle>Monetize</SectionTitle>
@@ -104,6 +97,11 @@ export default () => (
             * Cross-promotions through our PR, marketing, and community channels
           </li>
         </ul>
+        <p>
+          <ExternalLink href="https://airtable.com/shraDwLHxfGjP0fXl">
+            <InlineLinkContainer>Learn more here</InlineLinkContainer>
+          </ExternalLink>
+        </p>
       </Section>
     </NarrowContainer>
   </Layout>
