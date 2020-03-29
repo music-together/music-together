@@ -1,10 +1,10 @@
-import { format, isBefore, subHours } from "date-fns"
+import { format, isBefore } from "date-fns"
+import { getCutoffTime } from "./getCutoffTime"
 
 export const DateKeyFormat = 'yyyyMMdd';
 
 const groupEventsByDay = events => {
-  // events with showtime before this time will not be displayed
-  const cutoffTime = subHours(new Date(), 1);
+  const cutoffTime = getCutoffTime();
 
   return events.reduce((grouped, event) => {
     if (!event.data.Show_time || (event.data.Artist || []).length === 0) {
