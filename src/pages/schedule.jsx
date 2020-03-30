@@ -23,7 +23,12 @@ export default () => {
         }
       }
 
-      artistsResult: allAirtable(filter: { table: { eq: "Artists" } }) {
+      artistsResult: allAirtable(
+          filter: { 
+              table: { eq: "Artists" },
+              data: { Final_Approval: {eq: true} }
+          },
+      ) {
         edges {
           node {
             recordId
