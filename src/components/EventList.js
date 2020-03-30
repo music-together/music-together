@@ -22,9 +22,9 @@ export const EventList = ({ events, artists }) => {
             {eventsOnDate.map((event) => {
               if (!event.data.Show_time) return null
 
-              const eventArtists = (event.data.Artist || []).map(
-                (artistRecordId) => artists[artistRecordId]
-              )
+              const eventArtists = (event.data.Artist || [])
+                .map((artistRecordId) => artists[artistRecordId])
+                .filter((artist) => !!artist)
               if (eventArtists.length === 0) return null
 
               return (
