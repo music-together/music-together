@@ -39,8 +39,7 @@ export default () => (
           working musicians affected by the COVID-19 crisis.
         </Text>
         <Text>
-          MusicTogether.ca was founded by Raja Khanna, Jeffrey Remedios, Oliver
-          Johnson, and Daniel Debow (partners in the{" "}
+          MusicTogether.ca was founded by Raja Khanna, Gary Slaight, Jeffrey Remedios, Oliver Johnson, Arts & Crafts and Daniel Debow (partners in the{" "}
           <a
             href="https://www.therootdownstudio.com/"
             target="_blank"
@@ -101,10 +100,16 @@ export default () => (
         <Heading>Roadies</Heading>
 
         <Text size="xlarge">Signal Creative Community</Text>
-        <Text size="xlarge">
-          Michael Girgis
+        <Text size="xlarge">Michael Girgis 
           <Personally />
-        </Text>
+          </Text>
+        <Text size="xlarge">
+          Gary Slaight
+          <Personally />
+          </Text>
+        <Text size="xlarge">Derrick Ross 
+          <Personally />
+            </Text>
       </Section>
 
       <Blurb>
