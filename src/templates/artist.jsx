@@ -64,12 +64,12 @@ export default ({ data }) => {
 
         {(artist.Press_Image || []).map((pressImage) => (
           <div key={pressImage.id}>
-            <img
+            {pressImage.thumbnails && <img
               alt={artist.Name}
               height={pressImage.thumbnails.large.height}
               width={pressImage.thumbnails.large.width}
               src={pressImage.thumbnails.large.url}
-            />
+            />}
           </div>
         ))}
 
