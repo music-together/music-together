@@ -56,7 +56,7 @@ export default () => (
         <Heading>Matching Partner</Heading>
 
         <a href="http://www.ontariocreates.ca/">
-          <Text size="xlarge">Ontario Live</Text>
+          <Text size="xlarge">Ontario Creates</Text>
         </a>
       </Section>
 
@@ -100,14 +100,14 @@ export default () => (
         <Heading>Roadies</Heading>
 
         <Text size="xlarge">Signal Creative Community</Text>
-        <Text size="xlarge">Michael Girgis 
+        <Text size="xlarge">Michael Girgis
           <Personally />
           </Text>
         <Text size="xlarge">
           Gary Slaight
           <Personally />
           </Text>
-        <Text size="xlarge">Derrick Ross 
+        <Text size="xlarge">Derrick Ross
           <Personally />
             </Text>
       </Section>
