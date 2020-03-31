@@ -100,6 +100,7 @@ export default () => (
         <Heading>Roadies</Heading>
 
         <Text size="xlarge">Signal Creative Community</Text>
+        <Text size="xlarge"><a href="http://www.hendersonandco.ca/" target="_blank" rel="noopener noreferrer">Henderson & Co.</a></Text>
         <Text size="xlarge">Michael Girgis
           <Personally />
           </Text>
