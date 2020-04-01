@@ -29,7 +29,7 @@ export default () => {
         }
       }
 
-      artistsResult: allAirtable(filter: { 
+      artistsResult: allAirtable(filter: {
           table: { eq: "Artists" },
           data: { Final_Approval: {eq: true} }
       }) {
@@ -40,6 +40,7 @@ export default () => {
               # Artist info
               Name
               Genre
+              Band_or_Performer_Name
               Representation_Name
               Performance_Type
               Audience

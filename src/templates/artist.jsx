@@ -51,14 +51,14 @@ export default ({ data }) => {
   const schedule = data.schedule.edges
     .map((edge) => edge.node)
     .filter((node) => !!node.data.Show_time)
-
+    
   return (
     <Layout>
-      <SEO title={artist.Name} description={artist.Bio} />
+      <SEO title={artist.Band_or_Performer_Name || artist.Name} description={artist.Bio} />
 
       <NarrowContainer>
         <ArtistInfo>
-          <Heading size="xlarge">{artist.Name}</Heading>
+          <Heading size="xlarge">{artist.Band_or_Performer_Name || artist.Name}</Heading>
           <Text subdued>{genres.join(", ")}</Text>
         </ArtistInfo>
 
@@ -110,6 +110,7 @@ export default ({ data }) => {
           <SocialLink link={artist.Facebook} />
           <SocialLink link={artist.Instagram} />
           <SocialLink link={artist.Twitter} />
+          <SocialLink link={artist.Website} type="website" />
           <SocialLink link={artist.Spotify} type="spotify" />
           <SocialLink link={artist.Youtube} type="youtube" />
         </center>
@@ -139,6 +140,7 @@ export const sceneQuery = graphql`
     artist: airtable(table: { eq: "Artists" }, recordId: { eq: $recordId }) {
       data {
         Name
+        Band_or_Performer_Name
         Genre
         Email
         Phone

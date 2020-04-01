@@ -27,7 +27,7 @@ export default ({ data }) => {
 export const sceneQuery = graphql`
   query {
     artists: allAirtable(
-        sort: {fields: data___Name, order: ASC}, 
+        sort: {fields: data___Name, order: ASC},
         filter: {
             table: { eq: "Artists" },
             data: { Final_Approval: {eq: true} }
@@ -39,6 +39,7 @@ export const sceneQuery = graphql`
           recordId
           data {
             Name
+            Band_or_Performer_Name
             Genre
             Press_Image {
               id
