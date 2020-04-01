@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { Heading, Text } from "components"
 import Schedule from "./schedule"
+import Sponsors from "components/Sponsors"
 
 const HeroContainer = styled.div`
   text-align: center;
@@ -45,6 +46,7 @@ function LandingPage() {
         <Action to="/support">Support the artists</Action>
       </HeroContainer>
       <Schedule />
+      <Sponsors />
     </>
   )
 }

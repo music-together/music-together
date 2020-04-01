@@ -86,7 +86,7 @@ export const ScheduledEvent = ({ event, artists }) => {
   const showTime = event ? new Date(event.data.Show_time) : null
   const isShowTime = event ? hasShowStarted(showTime) : null
   const formattedTime = event
-    ? format(showTime, "K a")
+    ? format(showTime, "K:mm a")
     : null
 
   return (

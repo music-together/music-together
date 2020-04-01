@@ -77,9 +77,6 @@ export function Footer() {
               <Link to="/support">Support the artists</Link>
             </li>
             <li>
-              <Link to="/sponsors">Sponsors</Link>
-            </li>
-            <li>
               <Link to="/resources">Artist resources</Link>
             </li>
             <li>

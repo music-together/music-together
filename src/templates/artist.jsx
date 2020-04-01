@@ -51,7 +51,7 @@ export default ({ data }) => {
   const schedule = data.schedule.edges
     .map((edge) => edge.node)
     .filter((node) => !!node.data.Show_time)
-    
+
   return (
     <Layout>
       <SEO title={artist.Band_or_Performer_Name || artist.Name} description={artist.Bio} />
@@ -88,7 +88,7 @@ export default ({ data }) => {
                 </Heading>
                 <Event>
                   <EventDetail>
-                    <Time>{format(showTime, "K a")}</Time>
+                    <Time>{format(showTime, "K:mm a")}</Time>
                   </EventDetail>
                   <WatchNowLink
                     href={artist.Stream_Link}
@@ -107,9 +107,9 @@ export default ({ data }) => {
         )}
 
         <center>
-          <SocialLink link={artist.Facebook} />
-          <SocialLink link={artist.Instagram} />
-          <SocialLink link={artist.Twitter} />
+          <SocialLink link={artist.Facebook} type="facebook" />
+          <SocialLink link={artist.Instagram} type="instagram" />
+          <SocialLink link={artist.Twitter} type="twitter" />
           <SocialLink link={artist.Website} type="website" />
           <SocialLink link={artist.Spotify} type="spotify" />
           <SocialLink link={artist.Youtube} type="youtube" />
