@@ -59,7 +59,12 @@ const getArtistImageUrl = (artist) => {
   if ((artist.data.Press_Image || []).length === 0) {
     return null
   }
-  return artist.data.Press_Image[0].thumbnails.large.url
+
+  if (artist.data.Press_Image[0].thumbnails && artist.data.Press_Image[0].thumbnails.large) {
+    return artist.data.Press_Image[0].thumbnails.large.url
+  }
+
+  return null
 }
 
 export const ScheduledEvent = ({ event, artists }) => {
