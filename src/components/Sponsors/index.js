@@ -102,7 +102,6 @@ export default () => (
         <Text size="large">Derrick Ross<Personally /></Text>
         <Text size="large">Signal Creative Community (Dave Sorbara)</Text>
         <Text size="large">Proscenium Services (Blanche Israël)</Text>
-        <Text size="large"><a href="http://www.hendersonandco.ca/" target="_blank" rel="noopener noreferrer">Henderson & Co.</a></Text>
         <Text size="large">Michael Girgis<Personally /></Text>
       </Section>
 
