@@ -88,6 +88,10 @@ export default () => {
   // Only display events that happen on "next" day relative from cutoff
   const nextDaysEvents = groupEventsByDay(events).values().next().value;
 
+  if (events.length == 0) {
+    return (<></>);
+  }
+
   return (
     <NarrowContainer>
       <EventList events={nextDaysEvents} artists={artists} />
