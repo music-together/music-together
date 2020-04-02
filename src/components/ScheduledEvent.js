@@ -99,7 +99,7 @@ export const ScheduledEvent = ({ event, artists }) => {
       <ArtistContainer>
         {artists.map((artist) => (
           <ArtistLink key={artist.recordId} to={`/artist/${artist.recordId}`}>
-            {artist.data.Band_or_Performer_Name || artist.data.Name}
+            {artist.data.Performer_Name || artist.data.Name}
           </ArtistLink>
         ))}
         <Text subdued>{genres}</Text>

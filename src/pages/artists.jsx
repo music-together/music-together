@@ -39,7 +39,7 @@ export const sceneQuery = graphql`
           recordId
           data {
             Name
-            Band_or_Performer_Name
+            Performer_Name
             Genre
             Press_Image {
               id

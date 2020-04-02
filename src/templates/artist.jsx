@@ -54,11 +54,11 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={artist.Band_or_Performer_Name || artist.Name} description={artist.Bio} />
+      <SEO title={artist.Performer_Name || artist.Name} description={artist.Bio} />
 
       <NarrowContainer>
         <ArtistInfo>
-          <Heading size="xlarge">{artist.Band_or_Performer_Name || artist.Name}</Heading>
+          <Heading size="xlarge">{artist.Performer_Name || artist.Name}</Heading>
           <Text subdued>{genres.join(", ")}</Text>
         </ArtistInfo>
 
@@ -140,7 +140,7 @@ export const sceneQuery = graphql`
     artist: airtable(table: { eq: "Artists" }, recordId: { eq: $recordId }) {
       data {
         Name
-        Band_or_Performer_Name
+        Performer_Name
         Genre
         Email
         Phone

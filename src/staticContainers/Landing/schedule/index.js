@@ -40,7 +40,7 @@ export default () => {
               # Artist info
               Name
               Genre
-              Band_or_Performer_Name
+              Performer_Name
               Representation_Name
               Performance_Type
               Audience
@@ -71,7 +71,6 @@ export default () => {
               # Metadata
               Location
               Past_Gigs
-              Notes
             }
           }
         }
@@ -88,17 +87,15 @@ export default () => {
   // Only display events that happen on "next" day relative from cutoff
   const nextDaysEvents = groupEventsByDay(events).values().next().value;
 
-  if (events.length === 0) {
-    return (<></>);
-  }
+  console.log(nextDaysEvents);
 
   return (
     <NarrowContainer>
       <EventList events={nextDaysEvents} artists={artists} />
 
-      <Link to="/schedule">
+      {nextDaysEvents && <Link to="/schedule">
         <Button>View all</Button>
-      </Link>
+      </Link>}
       <BottomSpacer />
     </NarrowContainer>
   )

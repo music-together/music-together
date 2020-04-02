@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
 import Section from "components/common/Section"
+import logo from "../../assets/ontario.jpg"
 import { Text, NarrowContainer, Heading, DonateButton } from "components"
 
 const Blurb = styled.div`
@@ -54,7 +55,12 @@ export default () => (
         <Heading>Matching Partner</Heading>
 
         <a href="http://www.ontariocreates.ca/">
-          <Text size="large">Ontario Live through Ontario Creates</Text>
+          <img
+          src={logo} alt="Ontario"
+          height="64px"
+          width="160px"
+          />
+          <Text size="large">Ministry of Heritage, Sport, Tourism & Culture Industry</Text>
         </a>
       </Section>
 

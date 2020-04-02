@@ -4,6 +4,9 @@ import { getCutoffTime } from "./getCutoffTime"
 export const DateKeyFormat = 'yyyyMMdd';
 
 const groupEventsByDay = events => {
+  if (events == null || events.length === 0) {
+    return new Map();
+  }
   const cutoffTime = getCutoffTime();
 
   return events.reduce((grouped, event) => {
