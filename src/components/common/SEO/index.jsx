@@ -59,7 +59,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: "twitter:image",
-          content: "https://musictogether.ca/" + socialImage,
+          content: "https://musictogether.ca" + socialImage,
         },
         {
           name: "twitter:creator",
