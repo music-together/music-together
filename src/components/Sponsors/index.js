@@ -130,6 +130,7 @@ export default () => (
             the money and so much more.
           </li>
           <li>Henderson & Co for legal assistance</li>
+          <li>Killbeat Media for handling PR</li>
           <li>
             All the volunteers who have contributed to this project, including
             all of you for watching, spreading the word and getting people to
