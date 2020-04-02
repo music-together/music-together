@@ -5,7 +5,7 @@ import Landing from "staticContainers/Landing"
 
 export default () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="MusicTogether" />
     <Landing />
   </Layout>
 )
