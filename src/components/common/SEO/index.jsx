@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: "MusicTogether",
         },
         {
           property: `og:description`,
@@ -48,7 +48,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: "MusicTogether",
         },
         {
           name: `twitter:description`,
