@@ -59,6 +59,14 @@ function SEO({ description, lang, meta, title }) {
           content: socialImage,
         },
         {
+          name: "twitter:image",
+          content: socialImage,
+        },
+        {
+          name: "twitter:creator",
+          content: "@MusicTogetherON",
+        },
+        {
           name: "twitter:card",
           content: "summary_large_image",
         },
