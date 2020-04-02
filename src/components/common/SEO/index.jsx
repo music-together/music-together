@@ -13,7 +13,6 @@ function SEO({ description, lang, meta, title }) {
             siteUrl
             title
             description
-            twitterImg
           }
         }
       }
@@ -57,6 +56,14 @@ function SEO({ description, lang, meta, title }) {
         {
           property: "og:image",
           content: socialImage,
+        },
+        {
+          name: "twitter:image",
+          content: "https://musictogether.ca" + socialImage,
+        },
+        {
+          name: "twitter:creator",
+          content: "@MusicTogetherON",
         },
         {
           name: "twitter:card",
