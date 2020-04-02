@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Section from "components/common/Section"
 import {DonateButton} from "components/DonateButton"
+import { ExternalLink } from "../../ExternalLink"
 
 const FooterWrapper = styled.footer`
   display: grid;
@@ -51,6 +52,10 @@ const Scroll = styled.div`
   grid-area: scroll;
 `
 
+const Social = styled.div`
+  grid-area: social;
+`
+
 export function Footer() {
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" })
@@ -95,21 +100,21 @@ export function Footer() {
         </Section>
       </Links>
 
-      {/* <Social>
+      <Social>
         <Section>
           <ul>
             <li>
-              <Link to="#">Instagram</Link>
+              <ExternalLink href={'https://www.instagram.com/MusicTogetherON/'}>Instagram</ExternalLink>
             </li>
             <li>
-              <Link to="#">Facebook</Link>
+              <ExternalLink href={'https://www.facebook.com/musictogetherON/'}>Facebook</ExternalLink>
             </li>
             <li>
-              <Link to="#">Twitter</Link>
+              <ExternalLink href={'https://twitter.com/MusicTogetherON'}>Twitter</ExternalLink>
             </li>
           </ul>
         </Section>
-      </Social> */}
+      </Social>
 
       <Scroll>
         <Section>
