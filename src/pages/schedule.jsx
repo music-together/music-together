@@ -36,6 +36,7 @@ export default () => {
               # Artist info
               Name
               Genre
+              Band_or_Performer_Name
               Representation_Name
               Performance_Type
               Audience
