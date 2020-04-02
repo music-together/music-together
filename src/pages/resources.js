@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Layout from "components/common/Layout"
 import SEO from "components/common/SEO"
 import { Text, NarrowContainer, Heading } from "components"
-import collectingFacebook from '../assets/Collecting your Facebook advertising credits0401.pdf'
+import activatingFacebook from '../assets/Activating your Facebook advertising credits0402.pdf'
 import eligibility from '../assets/Eligibility0401.pdf'
 import instagram from '../assets/How to Livestream on Instagram0401.pdf'
 import donation from '../assets/How to Set Up a Donation Page0401.pdf'
@@ -54,8 +54,8 @@ export default () => (
           </a>
         </li>
         <li>
-          <a href={collectingFacebook}>
-            <Text size="xlarge">Collecting your Facebook advertising credits</Text>
+          <a href={activatingFacebook}>
+            <Text size="xlarge">Activating your Facebook advertising credits</Text>
           </a>
         </li>
       </List>
