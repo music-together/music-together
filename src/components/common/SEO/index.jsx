@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import socialImage from "../../../assets/twitter-image.jpg"
 
 function SEO({ description, lang, meta, title }) {
-  const { site, siteUrl } = useStaticQuery(
+  const { site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -59,7 +59,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: "twitter:image",
-          content: siteUrl + socialImage,
+          content: "https://musictogether.ca/" + socialImage,
         },
         {
           name: "twitter:creator",
