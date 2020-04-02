@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import socialImage from "../../../assets/twitter-image.jpg"
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -55,7 +56,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: "og:image",
-          content: site.siteMetadata.siteUrl + site.siteMetadata.twitterImg,
+          content: socialImage,
         },
         {
           name: "twitter:card",
