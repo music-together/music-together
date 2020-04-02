@@ -129,6 +129,7 @@ export default () => (
             HUGE thank you to the Arts & Crafts team for managing the marketing,
             the money and so much more.
           </li>
+          <li>Henderson & Co for legal assistance</li>
           <li>
             All the volunteers who have contributed to this project, including
             all of you for watching, spreading the word and getting people to
