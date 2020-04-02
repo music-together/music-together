@@ -31,7 +31,7 @@ export default () => (
       <Section>
         <SectionTitle>Apply</SectionTitle>
         <p>
-          <ExternalLink href="https://musictogether.ca/static/eligibility-b54596b8dc096c14940a2b9b6af56b14.pdf">
+          <ExternalLink href="https://music-together.netlify.com/static/Eligibility0401-495cb3739bfa7c2439fe343c38256af3.pdf">
             <InlineLinkContainer>Eligible musicians</InlineLinkContainer>
           </ExternalLink> in Ontario can apply to perform through
           MusicTogether, and will be evaluated on a first-come, first-serve
