@@ -90,8 +90,8 @@ export default () => (
           Raja Khanna
           <Personally />
         </Text>
-        <Text size="large">Bedtracks (Oli Johnson)</Text>
-        <Text size="large">Metalworks Studios (Gil Moore)</Text>
+        <Text size="large">Bedtracks <Small>(Oli Johnson)</Small></Text>
+        <Text size="large">Metalworks Studios <Small>(Gil Moore)</Small></Text>
       </Section>
 
       <Section noDivider>
@@ -100,8 +100,8 @@ export default () => (
         <Text size="large">Gary Slaight<Personally /></Text>
         <Text size="large">Randy Lennox<Personally /></Text>
         <Text size="large">Derrick Ross<Personally /></Text>
-        <Text size="large">Signal Creative Community (Dave Sorbara)</Text>
-        <Text size="large">Proscenium Services (Blanche Israël)</Text>
+        <Text size="large">Signal Creative Community <Small>(Dave Sorbara)</Small></Text>
+        <Text size="large">Proscenium Services <Small>(Blanche Israël)</Small></Text>
         <Text size="large">Michael Girgis<Personally /></Text>
       </Section>
 

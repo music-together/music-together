@@ -57,7 +57,7 @@ export default () => (
 
         <Text>
           Financial support for MusicTogether is made possible by the&nbsp;
-          <SupportLink to="/sponsors">
+          <SupportLink to="/">
             <InlineLinkContainer>generous contributions of our supporters.</InlineLinkContainer>
           </SupportLink>
         </Text>
