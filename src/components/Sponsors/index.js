@@ -54,61 +54,56 @@ export default () => (
         <Heading>Matching Partner</Heading>
 
         <a href="http://www.ontariocreates.ca/">
-          <Text size="xlarge">Ontario Creates</Text>
+          <Text size="large">Ontario Live through Ontario Creates</Text>
         </a>
       </Section>
 
       <Section noDivider>
         <Heading>Title Promotors</Heading>
         <a href="https://www.slaightmusic.com/">
-          <Text size="xlarge">Slaight Music</Text>
+          <Text size="large">Slaight Music</Text>
         </a>
 
         <a href="https://arts-crafts.ca/">
-          <Text size="xlarge">Arts & Crafts</Text>
+          <Text size="large">Arts & Crafts</Text>
         </a>
       </Section>
 
       <Section noDivider>
         <Heading>Crew</Heading>
-        <Text size="xlarge">
+        <Text size="large">
           Jeffrey Remedios of Universal Music <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="large">
           Steve Kane of Warner Music
           <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="large">
           Shane Carter of Sony Music
           <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="large">
           Daniel Debow
           <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="large">
           Raja Khanna
           <Personally />
         </Text>
-        <Text size="xlarge">Bedtracks/ Oli Johnson</Text>
-        <Text size="xlarge">Metalworks Studios</Text>
+        <Text size="large">Bedtracks (Oli Johnson)</Text>
+        <Text size="large">Metalworks Studios (Gil Moore)</Text>
       </Section>
 
       <Section noDivider>
         <Heading>Roadies</Heading>
 
-        <Text size="xlarge">Signal Creative Community</Text>
-        <Text size="xlarge"><a href="http://www.hendersonandco.ca/" target="_blank" rel="noopener noreferrer">Henderson & Co.</a></Text>
-        <Text size="xlarge">Michael Girgis
-          <Personally />
-          </Text>
-        <Text size="xlarge">
-          Gary Slaight
-          <Personally />
-          </Text>
-        <Text size="xlarge">Derrick Ross
-          <Personally />
-            </Text>
+        <Text size="large">Gary Slaight<Personally /></Text>
+        <Text size="large">Randy Lennox<Personally /></Text>
+        <Text size="large">Derrick Ross<Personally /></Text>
+        <Text size="large">Signal Creative Community (Dave Sorbara)</Text>
+        <Text size="large">Proscenium Services (Blanche Israël)</Text>
+        <Text size="large"><a href="http://www.hendersonandco.ca/" target="_blank" rel="noopener noreferrer">Henderson & Co.</a></Text>
+        <Text size="large">Michael Girgis<Personally /></Text>
       </Section>
 
       <Blurb>

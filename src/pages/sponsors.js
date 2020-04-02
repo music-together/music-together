@@ -56,59 +56,59 @@ export default () => (
         <Heading>Matching Partner</Heading>
 
         <a href="http://www.ontariocreates.ca/">
-          <Text size="xlarge">Ontario Creates</Text>
+          <Text size="medium">Ontario Creates</Text>
         </a>
       </Section>
 
       <Section noDivider>
         <Heading>Title Promotors</Heading>
         <a href="https://www.slaightmusic.com/">
-          <Text size="xlarge">Slaight Music</Text>
+          <Text size="medium">Slaight Music</Text>
         </a>
 
         <a href="https://arts-crafts.ca/">
-          <Text size="xlarge">Arts & Crafts</Text>
+          <Text size="medium">Arts & Crafts</Text>
         </a>
       </Section>
 
       <Section noDivider>
         <Heading>Crew</Heading>
-        <Text size="xlarge">
+        <Text size="medium">
           Jeffrey Remedios of Universal Music <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="medium">
           Steve Kane of Warner Music
           <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="medium">
           Shane Carter of Sony Music
           <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="medium">
           Daniel Debow
           <Personally />
         </Text>
-        <Text size="xlarge">
+        <Text size="medium">
           Raja Khanna
           <Personally />
         </Text>
-        <Text size="xlarge">Bedtracks/ Oli Johnson</Text>
-        <Text size="xlarge">Metalworks Studios</Text>
+        <Text size="medium">Bedtracks/ Oli Johnson</Text>
+        <Text size="medium">Metalworks Studios</Text>
       </Section>
 
       <Section noDivider>
         <Heading>Roadies</Heading>
 
-        <Text size="xlarge">Signal Creative Community</Text>
-        <Text size="xlarge"><a href="http://www.hendersonandco.ca/" target="_blank" rel="noopener noreferrer">Henderson & Co.</a></Text>
-        <Text size="xlarge">Michael Girgis
+        <Text size="medium">Signal Creative Community</Text>
+        <Text size="medium"><a href="http://www.hendersonandco.ca/" target="_blank" rel="noopener noreferrer">Henderson & Co.</a></Text>
+        <Text size="medium">Michael Girgis
           <Personally />
           </Text>
-        <Text size="xlarge">
+        <Text size="medium">
           Gary Slaight
           <Personally />
           </Text>
-        <Text size="xlarge">Derrick Ross
+        <Text size="medium">Derrick Ross
           <Personally />
             </Text>
       </Section>
