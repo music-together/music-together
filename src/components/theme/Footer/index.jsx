@@ -112,6 +112,9 @@ export function Footer() {
             <li>
               <ExternalLink href={'https://twitter.com/MusicTogetherON'}>Twitter</ExternalLink>
             </li>
+            <li>
+              <ExternalLink href={'https://github.com/music-together/music-together'}>GitHub</ExternalLink>
+            </li>
           </ul>
         </Section>
       </Social>
