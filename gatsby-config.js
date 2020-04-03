@@ -6,8 +6,6 @@ module.exports = {
   siteMetadata: {
     title: `MusicTogether`,
     description: `Watch livestreams of artists across ontario.`,
-    twitterImg: `src/assets/twitter-image.jpg`,
-    facebookImg: `src/assets/facebook-image.jpg`,
     siteUrl: `https://musictogether.ca/`,
   },
   plugins: [

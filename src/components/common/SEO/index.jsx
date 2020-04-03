@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import socialImage from "../../../assets/twitter-image.jpg"
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -12,7 +13,6 @@ function SEO({ description, lang, meta, title }) {
             siteUrl
             title
             description
-            twitterImg
           }
         }
       }
@@ -35,7 +35,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: "MusicTogether",
         },
         {
           property: `og:description`,
@@ -47,7 +47,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: "MusicTogether",
         },
         {
           name: `twitter:description`,
@@ -55,7 +55,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: "og:image",
-          content: site.siteMetadata.siteUrl + site.siteMetadata.twitterImg,
+          content: socialImage,
+        },
+        {
+          name: "twitter:image",
+          content: "https://musictogether.ca" + socialImage,
+        },
+        {
+          name: "twitter:creator",
+          content: "@MusicTogetherON",
         },
         {
           name: "twitter:card",
