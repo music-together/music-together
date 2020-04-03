@@ -18,9 +18,17 @@ const Action = styled(Link)`
   font-size: var(--font-size--medium);
   text-decoration: underline;
   text-transform: uppercase;
+  padding-bottom: var(--spacing--xtight);
+`
 
-  &:first-of-type {
-    margin-right: var(--spacing--base);
+const ActionWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: calc(-1 * var(--spacing--base));
+
+  & > * {
+    margin-left: var(--spacing--base);
   }
 `
 
@@ -37,13 +45,13 @@ function LandingPage() {
           Support Ontario artists without leaving home
         </Heading>
         <TextWrapper>
-          <Text>
-            A living room concert series to pay artists in need
-          </Text>
+          <Text>A living room concert series to pay artists in need</Text>
         </TextWrapper>
 
-        <Action to="/artist-apply">Apply to perform</Action>
-        <Action to="/support">Support the artists</Action>
+        <ActionWrapper>
+          <Action to="/artist-apply">Apply to perform</Action>
+          <Action to="/support">Support the artists</Action>
+        </ActionWrapper>
       </HeroContainer>
       <Schedule />
       <Sponsors />
