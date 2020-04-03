@@ -113,6 +113,7 @@ export default ({ data }) => {
           <SocialLink link={artist.Website} type="website" />
           <SocialLink link={artist.Spotify} type="spotify" />
           <SocialLink link={artist.Youtube} type="youtube" />
+          <SocialLink link={artist.Patreon} type="patreon" />
         </center>
       </NarrowContainer>
     </Layout>
@@ -171,6 +172,7 @@ export const sceneQuery = graphql`
         Stream_Link
         Soundcloud
         Spotify
+        Patreon
         Time_slot
         Twitter
         Website

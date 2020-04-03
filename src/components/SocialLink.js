@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import { FaSpotify, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaApple, FaLink } from 'react-icons/fa';
+import { FaSpotify, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaApple, FaLink, FaPatreon } from 'react-icons/fa';
 import { ExternalLink } from "./ExternalLink"
 
 const IconMapper = {
@@ -43,6 +43,8 @@ const UntyledSocialIcon = ({type}) => {
       return <FaYoutube {...iconProps} />
     case 'apple':
       return <FaApple {...iconProps} />
+    case 'patreon':
+      return <FaPatreon {...iconProps} />
     default:
       return <FaLink {...iconProps} />
   }
