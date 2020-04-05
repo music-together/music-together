@@ -38,9 +38,7 @@ const WebContentContainer = styled.div`
   right: 0;
 `
 
-export default function Layout({ children }) {
-  const isHomeScreen = window.location.pathname === '/';
-
+export default function Layout({ children, isHomeScreen }) {
   return (
     <BackgroundContainer>
       {isHomeScreen && <BackgroundImageContainer />}
