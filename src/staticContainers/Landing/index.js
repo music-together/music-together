@@ -9,6 +9,11 @@ const HeroContainer = styled.div`
   text-align: center;
   margin: var(--spacing--tight) var(--spacing--xtight) var(--spacing--loose);
 
+  min-height: 347px;
+  @media (max-width: 600px) {
+    min-height: 117px;
+  }
+
   & h2 {
     line-height: 1.2em;
   }
@@ -16,34 +21,50 @@ const HeroContainer = styled.div`
 
 const Action = styled(Link)`
   font-size: var(--font-size--medium);
-  text-decoration: underline;
-  text-transform: uppercase;
-  padding-bottom: var(--spacing--xtight);
+  text-decoration: none;
+  padding-bottom: var(--spacing--base);
+  color: #FF842C;
+
+  @media (max-width: 600px) {
+    padding-bottom: var(--spacing--xtight);
+  }
 `
 
 const ActionWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   margin-left: calc(-1 * var(--spacing--base));
 
   & > * {
     margin-left: var(--spacing--base);
   }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`
+
+const HomePageTitle = styled.div`
+  font-size: var(--font-size--xlarge);
+  font-weight: 700;
+  max-width: 522px;
+  margin: 0 auto;
+  line-height: 39px;
 `
 
 const TextWrapper = styled.div`
   max-width: 500px;
-  margin: var(--spacing--tight) auto var(--spacing--base);
+  margin: var(--spacing--base) auto var(--spacing--base);
 `
 
 function LandingPage() {
   return (
     <>
       <HeroContainer>
-        <Heading size="xlarge" bold>
+        <HomePageTitle>
           Support Ontario artists without leaving home
-        </Heading>
+        </HomePageTitle>
         <TextWrapper>
           <Text>A living room concert series to pay artists in need</Text>
         </TextWrapper>
