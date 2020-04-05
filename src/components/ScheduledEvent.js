@@ -5,6 +5,7 @@ import { Text } from "components"
 import { format } from "date-fns"
 import { WatchNowLink } from "./WatchNowLink"
 import { hasShowStarted } from "../utilities/hasShowStarted"
+import SponsorImage from "../assets/sponsor.svg"
 
 const ScheduledEventContainer = styled.div`
   width: 100%;
@@ -54,6 +55,11 @@ const ArtistLink = styled(Link)`
   font-size: var(--font-size--large);
   margin-right: 8px;
 `
+const SponsorIndicator = styled.img`
+  content: url(${SponsorImage});
+  float: right;
+  margin-top: 6px;
+`
 
 const getArtistImageUrl = (artist) => {
   if ((artist.data.Press_Image || []).length === 0) {
@@ -88,6 +94,7 @@ export const ScheduledEvent = ({ event, artists }) => {
   const formattedTime = event
     ? format(showTime, "K:mm a")
     : null
+  const isSponsor = event ? event.data.Sponsored : false;
 
   return (
     <ScheduledEventContainer>
@@ -111,6 +118,7 @@ export const ScheduledEvent = ({ event, artists }) => {
       {!isShowTime && formattedTime && (
         <TimeContainer>
           <TimeText>{formattedTime}</TimeText>
+          {isSponsor && <SponsorIndicator />}
         </TimeContainer>
       )}
     </ScheduledEventContainer>

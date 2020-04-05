@@ -24,6 +24,7 @@ export default () => {
             data {
               Artist
               Show_time
+              Sponsored
             }
           }
         }
@@ -86,8 +87,6 @@ export default () => {
 
   // Only display events that happen on "next" day relative from cutoff
   const nextDaysEvents = groupEventsByDay(events).values().next().value;
-
-  console.log(nextDaysEvents);
 
   return (
     <NarrowContainer>

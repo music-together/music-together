@@ -18,6 +18,7 @@ export default () => {
             data {
               Artist
               Show_time
+              Sponsored
             }
           }
         }
