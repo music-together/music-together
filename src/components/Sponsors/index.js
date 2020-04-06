@@ -109,6 +109,7 @@ export default () => (
         <Text size="large">Signal Creative Community <Small>(Dave Sorbara)</Small></Text>
         <Text size="large">Proscenium Services <Small>(Blanche Israël)</Small></Text>
         <Text size="large">Michael Girgis<Personally /></Text>
+        <Text size="large">David Sharpe<Personally /></Text>
       </Section>
 
       <Blurb>
