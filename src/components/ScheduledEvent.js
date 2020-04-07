@@ -6,6 +6,7 @@ import { format } from "date-fns"
 import { WatchNowLink } from "./WatchNowLink"
 import { hasShowStarted } from "../utilities/hasShowStarted"
 import SponsorImage from "../assets/sponsor.svg"
+import GlobalStore from "../stores"
 
 const ScheduledEventContainer = styled.div`
   width: 100%;
@@ -59,6 +60,7 @@ const SponsorIndicator = styled.img`
   content: url(${SponsorImage});
   float: right;
   margin-top: 6px;
+  cursor: pointer;
 `
 
 const getArtistImageUrl = (artist) => {
@@ -96,6 +98,10 @@ export const ScheduledEvent = ({ event, artists }) => {
     : null
   const isSponsor = event ? event.data.Sponsored : false;
 
+  const clickedSponsorFlag = (e) => {
+    GlobalStore.update(s => { s.isShowing = true; });
+  }
+
   return (
     <ScheduledEventContainer>
       {artistImageUrl && (
@@ -118,7 +124,7 @@ export const ScheduledEvent = ({ event, artists }) => {
       {!isShowTime && formattedTime && (
         <TimeContainer>
           <TimeText>{formattedTime}</TimeText>
-          {isSponsor && <SponsorIndicator />}
+          {isSponsor && <SponsorIndicator onClick={clickedSponsorFlag} />}
         </TimeContainer>
       )}
     </ScheduledEventContainer>
