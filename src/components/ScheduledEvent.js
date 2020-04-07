@@ -103,7 +103,7 @@ export const ScheduledEvent = ({ event, artists }) => {
   }
 
   return (
-    <ScheduledEventContainer key={event.recordId}>
+    <ScheduledEventContainer key={event.recordId || artist.recordId}>
       {artistImageUrl && (
         <ArtistThumbnailContainer key={artistImageUrl}>
           <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
