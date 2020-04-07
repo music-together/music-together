@@ -21,6 +21,7 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.2",
     "prop-types": "^15.7.2",
+    "pullstate": "^1.13.0",
     "querystringify": "^2.1.1",
     "react": "^16.13.1",
     "react-content-loader": "^5.0.2",

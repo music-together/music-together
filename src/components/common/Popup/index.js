@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { MdClose } from 'react-icons/md';
+import GlobalStore from "../../../stores"
 
 const PopupBox = styled.div`
   position: absolute;
@@ -11,7 +12,18 @@ const PopupBox = styled.div`
   z-index: 101;
 
   margin: auto;
-  left: 0; right: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (max-width: 600px) {
+    border-radius: 0px;
+    bottom: 0;
+    transform: none;
+    width: 100%;
+    top: auto;
+  }
 `
 
 const PopupContentContainer = styled.div`
@@ -31,7 +43,6 @@ const TitleText = styled.div`
   font-weight: bold;
   font-size: 19px;
   line-height: 136.2%;
-
   letter-spacing: 0.03em;
 
   color: #000000;
@@ -45,7 +56,6 @@ const MessageText = styled.div`
   font-weight: normal;
   font-size: 13px;
   line-height: 136.2%;
-
   letter-spacing: 0.03em;
 
   color: #000000;
@@ -57,6 +67,7 @@ const TitleContainer = styled.div`
 const CloseButton = styled.button`
   border: 0px;
   box-sizing: border-box;
+  background: white;
   cursor: pointer;
   position: absolute;
   top: 10px;
@@ -64,25 +75,17 @@ const CloseButton = styled.button`
 `
 
 class Popup extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isShowing: false
-    };
-  }
-
   render() {
     console.log(`props: ${JSON.stringify(this.props)}`);
 
-    if (!this.state.isShowing) {
+    if (!this.props.isShowing) {
       return (<></>);
     }
     const title = "Sponsors";
     const message = "\"Sponsored\" means that either an artist donated their performance to the cause or a generous entity paid an artist directly in support of the cause! This means they're not taking a fee from MusicTogether, they are helping to increase awareness and donations.";
 
     const hidePopup = (e) => {
-      this.setState({ isShowing: false });
+      GlobalStore.update(s => { s.isShowing = false; })
     };
 
     return (
