@@ -4,7 +4,7 @@ import { MdClose } from 'react-icons/md';
 import GlobalStore from "../../../stores"
 
 const PopupBox = styled.div`
-  position: absolute;
+  position: fixed;
   width: 375px;
   background: white;
   padding: 20px;
@@ -27,7 +27,7 @@ const PopupBox = styled.div`
 `
 
 const PopupContentContainer = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 100;
   top: 0px;
   bottom: 0px;

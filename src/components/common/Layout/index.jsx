@@ -41,7 +41,7 @@ const WebContentContainer = styled.div`
   right: 0;
 `
 
-export default function Layout({ children, isHomeScreen, showPopup }) {
+export default function Layout({ children, isHomeScreen }) {
   const isShowing = useStoreState(GlobalStore, s => s.isShowing);
   return (
     <>
