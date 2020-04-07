@@ -2,6 +2,7 @@ import React from "react"
 import "./layout.css"
 import styled from "styled-components"
 import { Header, Footer } from "components/theme"
+import Popup from "components/common/Popup"
 import backgroundDesktop from "../../../assets/musictogether_background-desktop.png"
 import backgroundMobile from "../../../assets/musictogether_background-mobile.png"
 
@@ -38,8 +39,9 @@ const WebContentContainer = styled.div`
   right: 0;
 `
 
-export default function Layout({ children, isHomeScreen }) {
+export default function Layout({ children, isHomeScreen, showPopup }) {
   return (
+    <>
     <BackgroundContainer>
       {isHomeScreen && <BackgroundImageContainer />}
       <WebContentContainer>
@@ -48,5 +50,7 @@ export default function Layout({ children, isHomeScreen }) {
         <Footer />
       </WebContentContainer>
     </BackgroundContainer>
+    <Popup showPopup={showPopup}/>
+    </>
   )
 }
