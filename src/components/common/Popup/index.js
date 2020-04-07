@@ -76,8 +76,6 @@ const CloseButton = styled.button`
 
 class Popup extends React.Component {
   render() {
-    console.log(`props: ${JSON.stringify(this.props)}`);
-
     if (!this.props.isShowing) {
       return (<></>);
     }
