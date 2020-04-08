@@ -102,15 +102,11 @@ export const ScheduledEvent = ({ event, artists }) => {
     GlobalStore.update(s => { s.isShowing = true; });
   }
 
-  console.log(`${artist.data.Performer_Name || artist.data.Name}: ${artistImageUrl}`);
-
   return (
     <ScheduledEventContainer>
-      {artistImageUrl && (
-        <ArtistThumbnailContainer>
-          <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
-        </ArtistThumbnailContainer>
-      )}
+      <ArtistThumbnailContainer>
+        {artistImageUrl && <Thumbnail alt={artistImageAlt} src={artistImageUrl} />}
+      </ArtistThumbnailContainer>
       <ArtistContainer>
         {artists.map((artist) => (
           <ArtistLink key={artist.recordId} to={`/artist/${artist.recordId}`}>
