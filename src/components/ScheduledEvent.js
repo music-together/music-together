@@ -104,8 +104,8 @@ export const ScheduledEvent = ({ event, artists }) => {
 
   return (
     <ScheduledEventContainer key={Math.random()}>
-      {artistImageUrl && (<ArtistThumbnailContainer>
-        <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
+      {artistImageUrl && (<ArtistThumbnailContainer key={Math.random()}>
+        <Thumbnail key={Math.random()} alt={artistImageAlt} src={artistImageUrl} />
       </ArtistThumbnailContainer>)}
       <ArtistContainer>
         {artists.map((artist) => (
