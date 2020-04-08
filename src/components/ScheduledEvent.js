@@ -5,6 +5,7 @@ import { Text } from "components"
 import { format } from "date-fns"
 import { WatchNowLink } from "./WatchNowLink"
 import { hasShowStarted } from "../utilities/hasShowStarted"
+import ScheduleEventArtistImageContainer from "./ScheduleEventArtistImageContainer"
 import SponsorImage from "../assets/sponsor.svg"
 import GlobalStore from "../stores"
 
@@ -16,24 +17,6 @@ const ScheduledEventContainer = styled.div`
   margin-bottom: var(--spacing--tight);
   align-items: center;
   justify-content: flex-start;
-`
-
-const ArtistThumbnailContainer = styled.div`
-  flex-shrink: 0;
-  margin-right: var(--spacing--tight);
-  height: 100px;
-  width: 100px;
-
-  @media (max-width: 600px) {
-    width: 50px;
-    height: 50px;
-  }
-`
-
-const Thumbnail = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 `
 
 const ArtistContainer = styled.div`
@@ -104,9 +87,7 @@ export const ScheduledEvent = ({ event, artists }) => {
 
   return (
     <ScheduledEventContainer>
-      {artistImageUrl && (<ArtistThumbnailContainer>
-        <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
-      </ArtistThumbnailContainer>)}
+      <ScheduleEventArtistImageContainer artistImageAlt={artistImageAlt} artistImageUrl={artistImageUrl} />
       <ArtistContainer>
         {artists.map((artist) => (
           <ArtistLink key={artist.recordId} to={`/artist/${artist.recordId}`}>
