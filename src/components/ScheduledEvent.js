@@ -87,7 +87,7 @@ export const ScheduledEvent = ({ event, artists }) => {
 
   return (
     <ScheduledEventContainer>
-      <ScheduleEventArtistImageContainer artistImageAlt={artistImageAlt} artistImageUrl={artistImageUrl} />
+      <ScheduleEventArtistImageContainer artistImageAlt={artistImageAlt} artistImageUrl={artistImageUrl} artistId={artist.recordId} />
       <ArtistContainer>
         {artists.map((artist) => (
           <ArtistLink key={artist.recordId} to={`/artist/${artist.recordId}`}>

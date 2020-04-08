@@ -19,14 +19,14 @@ const Thumbnail = styled.img`
   object-fit: cover;
 `
 
-export default ({ artistImageAlt, artistImageUrl }) => {
+export default ({ artistImageAlt, artistImageUrl, artistId }) => {
     if (!artistImageUrl) {
       return (<></>)
     }
 
     return (
-      <ArtistThumbnailContainer key={artistImageAlt}>
-        <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
+      <ArtistThumbnailContainer key={artistImageAlt} id={artistImageAlt}>
+        <Thumbnail key={artistId} alt={artistImageAlt} src={artistImageUrl} />
       </ArtistThumbnailContainer>
     )
 }
