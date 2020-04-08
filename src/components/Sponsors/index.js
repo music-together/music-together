@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Layout from "components/common/Layout"
-import SEO from "components/common/SEO"
 import Section from "components/common/Section"
 import logo from "../../assets/ontario.jpg"
 import { Text, NarrowContainer, Heading, DonateButton } from "components"

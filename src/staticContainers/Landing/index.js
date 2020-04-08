@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Heading, Text } from "components"
+import { Text } from "components"
 import Schedule from "./schedule"
 import Sponsors from "components/Sponsors"
 

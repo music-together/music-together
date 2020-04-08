@@ -3,7 +3,6 @@ import { ScheduledEvent } from "components/ScheduledEvent"
 import { Heading } from "components"
 import { format, parse } from 'date-fns'
 import groupEventsByDay, { DateKeyFormat } from "../utilities/groupEventsByDay"
-import styled from "styled-components"
 
 export const EventList = ({ events, artists }) => {
   const groupedEvents = groupEventsByDay(events);
