@@ -25,7 +25,7 @@ export default ({ artistImageAlt, artistImageUrl }) => {
     }
 
     return (
-      <ArtistThumbnailContainer>
+      <ArtistThumbnailContainer key={artistImageAlt}>
         <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
       </ArtistThumbnailContainer>
     )
