@@ -85,6 +85,10 @@ export const ScheduledEvent = ({ event, artists }) => {
     GlobalStore.update(s => { s.isShowing = true; });
   }
 
+  console.log(`<DEBUG> artistImageAlt = ${artistImageAlt} - ${artistImageUrl}`);
+  console.log(`artist = ${JSON.stringify(artist)}`);
+  console.log(`</DEBUG>`);
+
   return (
     <ScheduledEventContainer>
       <ScheduleEventArtistImageContainer artistImageAlt={artistImageAlt} artistImageUrl={artistImageUrl} />

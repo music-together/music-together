@@ -21,11 +21,8 @@ const Thumbnail = styled.img`
 
 export default ({ artistImageAlt, artistImageUrl }) => {
     if (!artistImageUrl) {
-      console.log(`Null image for ${artistImageAlt}`);
       return (<></>)
     }
-
-    console.log(`Image for ${artistImageAlt} = ${artistImageUrl}`);
 
     return (
       <ArtistThumbnailContainer>
