@@ -103,10 +103,10 @@ export const ScheduledEvent = ({ event, artists }) => {
   }
 
   return (
-    <ScheduledEventContainer>
-      <ArtistThumbnailContainer>
-        {artistImageUrl && <Thumbnail alt={artistImageAlt} src={artistImageUrl} />}
-      </ArtistThumbnailContainer>
+    <ScheduledEventContainer key={Math.random()}>
+      {artistImageUrl && (<ArtistThumbnailContainer>
+        <Thumbnail alt={artistImageAlt} src={artistImageUrl} />
+      </ArtistThumbnailContainer>)}
       <ArtistContainer>
         {artists.map((artist) => (
           <ArtistLink key={artist.recordId} to={`/artist/${artist.recordId}`}>
