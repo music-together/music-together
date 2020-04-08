@@ -14,7 +14,7 @@ export const EventList = ({ events, artists }) => {
         const eventDate = parse(eventDateKey, DateKeyFormat, new Date());
 
         return (
-          <div key={Date.now()}>
+          <div key={Math.random()}>
             <Heading size="large" bold>
               {format(eventDate, 'eeee MMMM d')}
             </Heading>
