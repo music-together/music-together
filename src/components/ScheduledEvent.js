@@ -102,6 +102,8 @@ export const ScheduledEvent = ({ event, artists }) => {
     GlobalStore.update(s => { s.isShowing = true; });
   }
 
+  console.log(`${artist.data.Performer_Name || artist.data.Name}: ${artistImageUrl}`);
+
   return (
     <ScheduledEventContainer>
       {artistImageUrl && (
