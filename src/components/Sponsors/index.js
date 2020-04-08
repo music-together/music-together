@@ -58,7 +58,7 @@ export default () => (
           height="64px"
           width="160px"
           />
-          <Text size="large">Ministry of Heritage, Sport, Tourism & Culture Industry</Text>
+          <Text size="large">Ministry of Heritage, Sport, Tourism & Culture Industries</Text>
         </a>
       </Section>
 
