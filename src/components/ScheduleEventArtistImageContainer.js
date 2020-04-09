@@ -19,7 +19,15 @@ const Thumbnail = styled.img`
   object-fit: cover;
 `
 
-export default ({ artistImageAlt, artistImageUrl, artistId }) => {
+class ScheduleEventArtistImageContainer extends React.Component {
+  componentDidMount() {
+    setTimeout(function() {
+      this.setState({didRefresh: true})
+    }.bind(this), 1000)
+  }
+
+  render() {
+    const { artistImageAlt, artistImageUrl, artistId } = this.props;
     if (!artistImageUrl) {
       return (<></>)
     }
@@ -29,4 +37,7 @@ export default ({ artistImageAlt, artistImageUrl, artistId }) => {
         <Thumbnail key={artistId} alt={artistImageAlt} src={artistImageUrl} />
       </ArtistThumbnailContainer>
     )
+  }
 }
+
+export default ScheduleEventArtistImageContainer;
