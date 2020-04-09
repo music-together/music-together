@@ -53,6 +53,11 @@ export const EventList = ({ events, artists }) => {
     setClient(true);
   }, []);
 
+  /*
+    This is required because of Gatbsy hydration issues and our use of date parsing on the client side.
+
+    https://blog.logrocket.com/fixing-gatsbys-rehydration-issue/
+  */
   const clientKey = isClient ? "client" : "server";
 
   return (
