@@ -32,6 +32,8 @@ class ScheduleEventArtistImageContainer extends React.Component {
       return (<></>)
     }
 
+    console.log(`!!${artistId}!! (${artistImageUrl})`);
+
     return (
       <ArtistThumbnailContainer key={artistImageAlt} id={artistImageAlt}>
         <Thumbnail key={artistId} alt={artistImageAlt} src={artistImageUrl} />
