@@ -83,6 +83,8 @@ export default () => {
 
   console.log("<DEBUG>");
   console.log(`events: ${JSON.stringify(events)}`);
+  console.log("-------------");
+  console.log(`artists: ${JSON.stringify(artists)}`);
   console.log("</DEBUG>");
 
   return (

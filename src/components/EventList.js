@@ -10,6 +10,8 @@ export const EventList = ({ events, artists }) => {
   const keys = Array.from(groupedEvents.keys())
   console.log(`groupedEvent keys = ${JSON.stringify(keys)}`);
   for (var i = 0;i < keys.length;i++) {
+    const eventsOnDate = groupedEvents.get(keys[i]);
+    const eventDate = parse(keys[i], DateKeyFormat, new Date());
     console.log(`groupedEvent = ${JSON.stringify(groupedEvents.get(keys[i]))}`);
   }
 
@@ -20,7 +22,7 @@ export const EventList = ({ events, artists }) => {
         const eventDate = parse(eventDateKey, DateKeyFormat, new Date());
 
         return (
-          <div key={Math.random()}>
+          <div>
             <Heading size="large" bold>
               {format(eventDate, 'eeee MMMM d')}
             </Heading>
@@ -31,6 +33,7 @@ export const EventList = ({ events, artists }) => {
               const eventArtists = (event.data.Artist || [])
                 .map((artistRecordId) => artists[artistRecordId])
                 .filter((artist) => !!artist)
+
               if (eventArtists.length === 0) return null
 
               return (
