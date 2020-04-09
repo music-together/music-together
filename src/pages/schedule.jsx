@@ -81,6 +81,10 @@ export default () => {
     return acc
   }, {})
 
+  console.log("<DEBUG>");
+  console.log(`events: ${JSON.stringify(events)}`);
+  console.log("</DEBUG>");
+
   return (
     <Layout>
       <NarrowContainer>
