@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { ScheduledEvent } from "components/ScheduledEvent"
 import { Heading } from "components"
 import { format, parse } from 'date-fns'
@@ -50,9 +50,17 @@ export const EventList = ({ events, artists }) => {
   console.log(`events = ${JSON.stringify(eventsData)}`);
   console.log(`artists = ${JSON.stringify(artists)}`);
 
+  const [isClient, setClient] = useState(false);
+
+  useEffect(() => {
+    setClient(true);
+  }, []);
+
+  const clientKey = isClient ? "client" : "server";
+
   return (
-    <>
+    <div key={clientKey}>
       {eventsData.map(eventData => { return (<EventPerDayList key={Math.random()} artists={artists} eventData={eventData}/>) })}
-    </>
+    </div>
   )
 }
