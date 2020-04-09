@@ -7,14 +7,6 @@ import groupEventsByDay, { DateKeyFormat } from "../utilities/groupEventsByDay"
 export const EventList = ({ events, artists }) => {
   const groupedEvents = groupEventsByDay(events);
 
-  const keys = Array.from(groupedEvents.keys())
-  console.log(`groupedEvent keys = ${JSON.stringify(keys)}`);
-  for (var i = 0;i < keys.length;i++) {
-    const eventsOnDate = groupedEvents.get(keys[i]);
-    const eventDate = parse(keys[i], DateKeyFormat, new Date());
-    console.log(`groupedEvent = ${JSON.stringify(groupedEvents.get(keys[i]))}`);
-  }
-
   return (
     <>
       {Array.from(groupedEvents.keys()).map(eventDateKey => {
