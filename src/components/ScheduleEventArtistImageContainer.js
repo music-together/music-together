@@ -20,23 +20,15 @@ const Thumbnail = styled.img`
 `
 
 class ScheduleEventArtistImageContainer extends React.Component {
-  componentDidMount() {
-    setTimeout(function() {
-      this.setState({didRefresh: true})
-    }.bind(this), 1000)
-  }
-
   render() {
     const { artistImageAlt, artistImageUrl, artistId } = this.props;
     if (!artistImageUrl) {
       return (<></>)
     }
 
-    console.log(`!!${artistImageAlt}!! (${artistImageUrl})`);
-
     return (
-      <ArtistThumbnailContainer key={`${artistImageAlt}_${this.didRefresh}`} id={artistImageAlt}>
-        <Thumbnail key={`${artistId}_${this.didRefresh}`} alt={artistImageAlt} src={artistImageUrl} />
+      <ArtistThumbnailContainer key={artistImageAlt} id={artistImageAlt}>
+        <Thumbnail key={artistId} alt={artistImageAlt} src={artistImageUrl} />
       </ArtistThumbnailContainer>
     )
   }

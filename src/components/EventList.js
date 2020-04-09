@@ -47,9 +47,6 @@ export const EventList = ({ events, artists }) => {
     eventsData.push({ eventDate, eventsOnDate });
   }
 
-  console.log(`events = ${JSON.stringify(eventsData)}`);
-  console.log(`artists = ${JSON.stringify(artists)}`);
-
   const [isClient, setClient] = useState(false);
 
   useEffect(() => {
