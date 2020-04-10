@@ -110,6 +110,76 @@ export default () => (
         <Text size="large">David Sharpe<Personally /></Text>
       </Section>
 
+      <Section noDivider>
+        <Heading>Curation Partners</Heading>
+
+        <Text size="large">
+          <a href="https://cionorth.ca/">
+          CION: Cultural Industries Ontario North
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="http://www.reseauontario.ca/fr/diffuseurs/membres-fondateurs/lassociation-des-professionels-de-la-chanson-et-de-la-musique/">
+          APCM: Associaton des Professionnels de la Chanson et de la Musique
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://darkspark.org//">
+          Darkspark
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://www.nagamo.ca/">
+          Nagamo Publishing
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="http://zneud.com/#home">
+          ZNEUD
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://riverfestelora.com/">
+          Riverfest Elora
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://theremixproject.com/">
+          The Remix Project
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="http://www.mnfsto.com/">
+          Manifesto
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://www.wavelengthmusic.ca/">
+          Wavelength Music
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://www.instagram.com/yesyesyall416/?hl=en">
+          Yes Yes Y'all
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="http://smallworldmusic.com/the-small-world-music-society/">
+          Small World Music
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://www.agakhanmuseum.org/">
+          Aga Khan Museum
+          </a>
+        </Text>
+        <Text size="large">
+          <a href="https://www.urgnt.ca/">
+          URGNT LIVE
+          </a>
+        </Text>
+      </Section>
+
       <Blurb>
         <Text>and you, the fans! Click here to donate now.</Text>
       </Blurb>
