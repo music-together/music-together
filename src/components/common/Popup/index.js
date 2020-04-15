@@ -79,8 +79,8 @@ class Popup extends React.Component {
     if (!this.props.isShowing) {
       return (<></>);
     }
-    const title = "Sponsors";
-    const message = "\"Sponsored\" means that either an artist donated their performance to the cause or a generous entity paid an artist directly in support of the cause! This means they're not taking a fee from MusicTogether, they are helping to increase awareness and donations.";
+    const title = this.props.title
+    const message = this.props.description;
 
     const hidePopup = (e) => {
       GlobalStore.update(s => { s.isShowing = false; })

@@ -43,6 +43,8 @@ const WebContentContainer = styled.div`
 
 export default function Layout({ children, isHomeScreen }) {
   const isShowing = useStoreState(GlobalStore, s => s.isShowing);
+  const popupTitle = useStoreState(GlobalStore, s => s.popupTitle);
+  const popupDescription = useStoreState(GlobalStore, s => s.popupDescription);
   return (
     <>
     <BackgroundContainer>
@@ -53,7 +55,7 @@ export default function Layout({ children, isHomeScreen }) {
         <Footer />
       </WebContentContainer>
     </BackgroundContainer>
-    <Popup isShowing={isShowing}/>
+    <Popup isShowing={isShowing} title={popupTitle} description={popupDescription} />
     </>
   )
 }

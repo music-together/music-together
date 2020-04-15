@@ -7,6 +7,7 @@ import { WatchNowLink } from "./WatchNowLink"
 import { hasShowStarted } from "../utilities/hasShowStarted"
 import ScheduleEventArtistImageContainer from "./ScheduleEventArtistImageContainer"
 import SponsorImage from "../assets/sponsor.svg"
+import CurationPartnerImage from "../assets/curation-partner.svg"
 import GlobalStore from "../stores"
 
 const ScheduledEventContainer = styled.div`
@@ -46,6 +47,13 @@ const SponsorIndicator = styled.img`
   cursor: pointer;
 `
 
+const CurationPartnerIndicator = styled.img`
+  content: url(${CurationPartnerImage});
+  float: right;
+  margin-top: 6px;
+  cursor: pointer;
+`
+
 const getArtistImageUrl = (artist) => {
   if ((artist.data.Press_Image || []).length === 0) {
     return null
@@ -80,9 +88,22 @@ export const ScheduledEvent = ({ event, artists }) => {
     ? format(showTime, "K:mm a")
     : null
   const isSponsor = event ? event.data.Sponsored : false;
+  const isCurationPartner = event ? event.data.IsCurationPartner  : false;
 
   const clickedSponsorFlag = (e) => {
-    GlobalStore.update(s => { s.isShowing = true; });
+    GlobalStore.update(s => {
+      s.isShowing = true;
+      s.popupTitle= "Sponsors"
+      s.popupDescription = "\"Sponsored\" means that either an artist donated their performance to the cause or a generous entity paid an artist directly in support of the cause! This means they're not taking a fee from MusicTogether, they are helping to increase awareness and donations.";
+    });
+  }
+
+  const clickedCurationPartnerFlag = (e) => {
+    GlobalStore.update(s => {
+      s.isShowing = true;
+      s.popupTitle= "Curation Partner";
+      s.popupDescription = "As we built out the MusicTogether program it was essential that we galvanized and drew upon the spirit of collaboration within the broader Ontario music community. Our goal was to build a list of Curating Partners, (arts organizations, collectives, festivals, etc.) who support and actively engage diverse communities across Ontario.";
+    });
   }
 
   return (
@@ -104,6 +125,7 @@ export const ScheduledEvent = ({ event, artists }) => {
         <TimeContainer>
           <TimeText>{formattedTime}</TimeText>
           {isSponsor && <SponsorIndicator onClick={clickedSponsorFlag} />}
+          {isCurationPartner && <CurationPartnerIndicator onClick={clickedCurationPartnerFlag} />}
         </TimeContainer>
       )}
     </ScheduledEventContainer>

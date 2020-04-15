@@ -25,6 +25,7 @@ export default () => {
               Artist
               Show_time
               Sponsored
+              IsCurationPartner
             }
           }
         }
