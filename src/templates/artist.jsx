@@ -88,7 +88,7 @@ export default ({ data }) => {
                 </Heading>
                 <Event>
                   <EventDetail>
-                    <Time>{format(showTime, "K:mm a")}</Time>
+                    <Time>{format(showTime, "h:mm a")}</Time>
                   </EventDetail>
                   <WatchNowLink
                     href={artist.Stream_Link}

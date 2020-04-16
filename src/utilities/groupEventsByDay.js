@@ -13,10 +13,13 @@ const groupEventsByDay = events => {
     if (!event.data.Show_time || (event.data.Artist || []).length === 0) {
       return grouped;
     }
-    const showTime = new Date(event.data.Show_time);
+    var showTime = new Date(event.data.Show_time);
     if (isBefore(showTime, cutoffTime)) {
       return grouped;
     }
+
+    // Need to allow up to 3AM to count as same day
+    showTime.setHours(showTime.getHours() - 3);
 
     const dateKey = format(showTime, DateKeyFormat);
     const existing = grouped.get(dateKey) || [];
