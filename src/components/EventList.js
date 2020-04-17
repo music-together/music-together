@@ -2,7 +2,15 @@ import React, { useState, useEffect } from "react"
 import { ScheduledEvent } from "components/ScheduledEvent"
 import { Heading } from "components"
 import { format, parse } from 'date-fns'
+import styled from "styled-components"
 import groupEventsByDay, { DateKeyFormat } from "../utilities/groupEventsByDay"
+
+const CuratedByText = styled.div`
+  text-transform: initial;
+  font-size: var(--font-size--default);
+  letter-spacing: initial;
+  font-weight: 500;
+`
 
 const DayEvent = ({ artists, event }) => {
   if (!event.data.Show_time) return null
@@ -24,11 +32,13 @@ const DayEvent = ({ artists, event }) => {
 
 const EventPerDayList = ({ artists, eventData }) => {
   const { eventsOnDate, eventDate } = eventData;
+  const curatdBy = eventsOnDate.length > 0 ? eventsOnDate[0].data.CuratedBy : null;
 
   return (
     <div key={eventDate}>
       <Heading size="large" bold>
         {format(eventDate, 'eeee MMMM d')}
+        {curatdBy && (<CuratedByText>Date curated by <b>{curatdBy}</b></CuratedByText>)}
       </Heading>
       {eventsOnDate.map((event) => { return (<DayEvent key={`${eventDate}_${event.recordId}`} artists={artists} event={event}/>) })}
     </div>

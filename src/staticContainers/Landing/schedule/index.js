@@ -26,6 +26,7 @@ export default () => {
               Show_time
               Sponsored
               IsCurationPartner
+              CuratedBy
             }
           }
         }
