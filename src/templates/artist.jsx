@@ -114,6 +114,7 @@ export default ({ data }) => {
           <SocialLink link={artist.Spotify} type="spotify" />
           <SocialLink link={artist.Youtube} type="youtube" />
           <SocialLink link={artist.Patreon} type="patreon" />
+          <SocialLink link={artist.Online_Store_URL} type="store" />
         </center>
       </NarrowContainer>
     </Layout>
@@ -154,6 +155,7 @@ export const sceneQuery = graphql`
         Instagram
         Location
         Online_Store
+        Online_Store_URL
         Past_Gigs
         Performance_Type
         Postal_Code
