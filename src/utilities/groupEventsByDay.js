@@ -7,7 +7,7 @@ const groupEventsByDay = events => {
   if (events == null || events.length === 0) {
     return new Map();
   }
-  const cutoffTime = getCutoffTime();
+  const cutoffTime = getCutoffTime(30);
 
   return events.reduce((grouped, event) => {
     if (!event.data.Show_time || (event.data.Artist || []).length === 0) {

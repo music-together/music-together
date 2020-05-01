@@ -1,6 +1,6 @@
-import { subHours } from "date-fns"
+import { subMinutes } from "date-fns"
 
-export const getCutoffTime = () => {
+export const getCutoffTime = (minutes = 60) => {
   // events with showtime before this time will not be displayed
-  return subHours(new Date(), 1);
+  return subMinutes(new Date(), minutes)
 }
