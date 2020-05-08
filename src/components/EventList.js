@@ -3,6 +3,7 @@ import { ScheduledEvent } from "components/ScheduledEvent"
 import { Heading } from "components"
 import { format, parse } from 'date-fns'
 import styled from "styled-components"
+import { ExternalLink } from "./ExternalLink"
 import groupEventsByDay, { DateKeyFormat } from "../utilities/groupEventsByDay"
 
 const CuratedByText = styled.div`
@@ -30,15 +31,23 @@ const DayEvent = ({ artists, event }) => {
   )
 }
 
+const CuratedByBlock = ({ curatedBy, curatedByUrl }) => {
+  if (curatedByUrl) {
+      return (<CuratedByText>Date curated by <ExternalLink href={curatedByUrl}><b>{curatedBy}</b></ExternalLink></CuratedByText>)
+  }
+  return (<CuratedByText>Date curated by <b>{curatedBy}</b></CuratedByText>)
+}
+
 const EventPerDayList = ({ artists, eventData }) => {
   const { eventsOnDate, eventDate } = eventData;
-  const curatdBy = eventsOnDate.length > 0 ? eventsOnDate[0].data.CuratedBy : null;
+  const curatedBy = eventsOnDate.length > 0 ? eventsOnDate[0].data.CuratedBy : null;
+  const curatedByUrl = eventsOnDate.length > 0 ? eventsOnDate[0].data.CuratedByUrl : null;
 
   return (
     <div key={eventDate}>
       <Heading size="large" bold>
         {format(eventDate, 'eeee MMMM d')}
-        {curatdBy && (<CuratedByText>Date curated by <b>{curatdBy}</b></CuratedByText>)}
+        {curatedBy && <CuratedByBlock curatedBy={curatedBy} curatedByUrl={curatedByUrl}/>}
       </Heading>
       {eventsOnDate.map((event) => { return (<DayEvent key={`${eventDate}_${event.recordId}`} artists={artists} event={event}/>) })}
     </div>

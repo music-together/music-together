@@ -21,6 +21,7 @@ export default () => {
               Sponsored
               IsCurationPartner
               CuratedBy
+              CuratedByUrl
             }
           }
         }
