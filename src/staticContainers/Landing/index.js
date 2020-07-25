@@ -9,7 +9,7 @@ const HeroContainer = styled.div`
   text-align: center;
   margin: var(--spacing--tight) var(--spacing--xtight) var(--spacing--loose);
 
-  min-height: 347px;
+  min-height: 327px;
   @media (max-width: 600px) {
     min-height: 117px;
   }
@@ -70,7 +70,6 @@ function LandingPage() {
         </TextWrapper>
 
         <ActionWrapper>
-          <Action to="/artist-apply">Apply to perform</Action>
           <Action to="/support">Support the artists</Action>
         </ActionWrapper>
       </HeroContainer>

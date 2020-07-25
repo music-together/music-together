@@ -24,7 +24,7 @@ const BackgroundImageContainer = styled.img`
   width: 100%;
   height: auto;
 
-  max-height: 598px;
+  max-height: 578px;
   content: url(${backgroundDesktop});
   @media (max-width: 600px) {
     max-height: 368px;

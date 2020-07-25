@@ -76,9 +76,6 @@ export function Footer() {
         <Section>
           <ul>
             <li>
-              <Link to="/artist-apply">Apply to perform</Link>
-            </li>
-            <li>
               <Link to="/support">Support the artists</Link>
             </li>
             <li>
